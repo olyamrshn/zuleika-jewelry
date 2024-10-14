@@ -5,10 +5,16 @@
 @layer base {
   html,
   body {
-    @apply text-gray-900 bg-gray-50 dark:bg-gray-950 dark:text-gray-200;
+    @apply text-gray-900 bg-white;
+    font-family: 'Kepler Std';
   }
 
   .using-mouse * {
     outline: none !important;
   }
+
+  .zuleika-text-color {
+    color: rgb(190, 59, 37)
+  }
+
 }
