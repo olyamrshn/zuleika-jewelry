@@ -3,7 +3,7 @@ import { SearchIcon, UserIcon, BagIcon } from "./Icons"
 
 export default function Nav() {
   return (
-    <nav className="flex justify-between transform scale-y-100 zuleika-text-color font-kepler items-center p-4 px-10">
+    <nav className="flex justify-between mb-[3em] transform scale-y-100 zuleika-text-color font-kepler items-center p-4 px-10">
       <div className="flex space-x-4 mr-auto">
         <a href="#">FR</a>
         <span>|</span>
