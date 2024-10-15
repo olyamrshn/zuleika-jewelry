@@ -11,7 +11,13 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as ProductImport } from './routes/product'
+import { Route as EStoreImport } from './routes/e-store'
 import { Route as DeferredImport } from './routes/deferred'
+import { Route as ContactImport } from './routes/contact'
+import { Route as BijouxDespaceImport } from './routes/bijoux-despace'
+import { Route as AtelierImport } from './routes/atelier'
+import { Route as AboutImport } from './routes/about'
 import { Route as LayoutImport } from './routes/_layout'
 import { Route as IndexImport } from './routes/index'
 import { Route as LayoutLayout2Import } from './routes/_layout/_layout-2'
@@ -20,8 +26,38 @@ import { Route as LayoutLayout2LayoutAImport } from './routes/_layout/_layout-2/
 
 // Create/Update Routes
 
+const ProductRoute = ProductImport.update({
+  path: '/product',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const EStoreRoute = EStoreImport.update({
+  path: '/e-store',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const DeferredRoute = DeferredImport.update({
   path: '/deferred',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ContactRoute = ContactImport.update({
+  path: '/contact',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const BijouxDespaceRoute = BijouxDespaceImport.update({
+  path: '/bijoux-despace',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const AtelierRoute = AtelierImport.update({
+  path: '/atelier',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const AboutRoute = AboutImport.update({
+  path: '/about',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -68,11 +104,53 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LayoutImport
       parentRoute: typeof rootRoute
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutImport
+      parentRoute: typeof rootRoute
+    }
+    '/atelier': {
+      id: '/atelier'
+      path: '/atelier'
+      fullPath: '/atelier'
+      preLoaderRoute: typeof AtelierImport
+      parentRoute: typeof rootRoute
+    }
+    '/bijoux-despace': {
+      id: '/bijoux-despace'
+      path: '/bijoux-despace'
+      fullPath: '/bijoux-despace'
+      preLoaderRoute: typeof BijouxDespaceImport
+      parentRoute: typeof rootRoute
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactImport
+      parentRoute: typeof rootRoute
+    }
     '/deferred': {
       id: '/deferred'
       path: '/deferred'
       fullPath: '/deferred'
       preLoaderRoute: typeof DeferredImport
+      parentRoute: typeof rootRoute
+    }
+    '/e-store': {
+      id: '/e-store'
+      path: '/e-store'
+      fullPath: '/e-store'
+      preLoaderRoute: typeof EStoreImport
+      parentRoute: typeof rootRoute
+    }
+    '/product': {
+      id: '/product'
+      path: '/product'
+      fullPath: '/product'
+      preLoaderRoute: typeof ProductImport
       parentRoute: typeof rootRoute
     }
     '/_layout/_layout-2': {
@@ -129,7 +207,13 @@ const LayoutRouteWithChildren =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '': typeof LayoutLayout2RouteWithChildren
+  '/about': typeof AboutRoute
+  '/atelier': typeof AtelierRoute
+  '/bijoux-despace': typeof BijouxDespaceRoute
+  '/contact': typeof ContactRoute
   '/deferred': typeof DeferredRoute
+  '/e-store': typeof EStoreRoute
+  '/product': typeof ProductRoute
   '/layout-a': typeof LayoutLayout2LayoutARoute
   '/layout-b': typeof LayoutLayout2LayoutBRoute
 }
@@ -137,7 +221,13 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '': typeof LayoutLayout2RouteWithChildren
+  '/about': typeof AboutRoute
+  '/atelier': typeof AtelierRoute
+  '/bijoux-despace': typeof BijouxDespaceRoute
+  '/contact': typeof ContactRoute
   '/deferred': typeof DeferredRoute
+  '/e-store': typeof EStoreRoute
+  '/product': typeof ProductRoute
   '/layout-a': typeof LayoutLayout2LayoutARoute
   '/layout-b': typeof LayoutLayout2LayoutBRoute
 }
@@ -146,7 +236,13 @@ export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
   '/_layout': typeof LayoutRouteWithChildren
+  '/about': typeof AboutRoute
+  '/atelier': typeof AtelierRoute
+  '/bijoux-despace': typeof BijouxDespaceRoute
+  '/contact': typeof ContactRoute
   '/deferred': typeof DeferredRoute
+  '/e-store': typeof EStoreRoute
+  '/product': typeof ProductRoute
   '/_layout/_layout-2': typeof LayoutLayout2RouteWithChildren
   '/_layout/_layout-2/layout-a': typeof LayoutLayout2LayoutARoute
   '/_layout/_layout-2/layout-b': typeof LayoutLayout2LayoutBRoute
@@ -154,14 +250,42 @@ export interface FileRoutesById {
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '' | '/deferred' | '/layout-a' | '/layout-b'
+  fullPaths:
+    | '/'
+    | ''
+    | '/about'
+    | '/atelier'
+    | '/bijoux-despace'
+    | '/contact'
+    | '/deferred'
+    | '/e-store'
+    | '/product'
+    | '/layout-a'
+    | '/layout-b'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '' | '/deferred' | '/layout-a' | '/layout-b'
+  to:
+    | '/'
+    | ''
+    | '/about'
+    | '/atelier'
+    | '/bijoux-despace'
+    | '/contact'
+    | '/deferred'
+    | '/e-store'
+    | '/product'
+    | '/layout-a'
+    | '/layout-b'
   id:
     | '__root__'
     | '/'
     | '/_layout'
+    | '/about'
+    | '/atelier'
+    | '/bijoux-despace'
+    | '/contact'
     | '/deferred'
+    | '/e-store'
+    | '/product'
     | '/_layout/_layout-2'
     | '/_layout/_layout-2/layout-a'
     | '/_layout/_layout-2/layout-b'
@@ -171,13 +295,25 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   LayoutRoute: typeof LayoutRouteWithChildren
+  AboutRoute: typeof AboutRoute
+  AtelierRoute: typeof AtelierRoute
+  BijouxDespaceRoute: typeof BijouxDespaceRoute
+  ContactRoute: typeof ContactRoute
   DeferredRoute: typeof DeferredRoute
+  EStoreRoute: typeof EStoreRoute
+  ProductRoute: typeof ProductRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   LayoutRoute: LayoutRouteWithChildren,
+  AboutRoute: AboutRoute,
+  AtelierRoute: AtelierRoute,
+  BijouxDespaceRoute: BijouxDespaceRoute,
+  ContactRoute: ContactRoute,
   DeferredRoute: DeferredRoute,
+  EStoreRoute: EStoreRoute,
+  ProductRoute: ProductRoute,
 }
 
 export const routeTree = rootRoute
@@ -194,7 +330,13 @@ export const routeTree = rootRoute
       "children": [
         "/",
         "/_layout",
-        "/deferred"
+        "/about",
+        "/atelier",
+        "/bijoux-despace",
+        "/contact",
+        "/deferred",
+        "/e-store",
+        "/product"
       ]
     },
     "/": {
@@ -206,8 +348,26 @@ export const routeTree = rootRoute
         "/_layout/_layout-2"
       ]
     },
+    "/about": {
+      "filePath": "about.tsx"
+    },
+    "/atelier": {
+      "filePath": "atelier.tsx"
+    },
+    "/bijoux-despace": {
+      "filePath": "bijoux-despace.tsx"
+    },
+    "/contact": {
+      "filePath": "contact.tsx"
+    },
     "/deferred": {
       "filePath": "deferred.tsx"
+    },
+    "/e-store": {
+      "filePath": "e-store.tsx"
+    },
+    "/product": {
+      "filePath": "product.tsx"
     },
     "/_layout/_layout-2": {
       "filePath": "_layout/_layout-2.tsx",

@@ -1,3 +1,5 @@
+@import url('https://fonts.cdnfonts.com/css/termina-test');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,8 +7,7 @@
 @layer base {
   html,
   body {
-    @apply text-gray-900 bg-white;
-    font-family: 'Kepler Std';
+    @apply text-gray-900 bg-white font-termina;
   }
 
   .using-mouse * {

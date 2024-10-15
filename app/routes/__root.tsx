@@ -14,6 +14,7 @@ import { NotFound } from "~/components/NotFound"
 import appCss from "~/styles/app.css?url"
 import { seo } from "~/utils/seo"
 import Nav from "~/components/Nav"
+import Footer from "~/components/Footer"
 
 export const Route = createRootRouteWithContext<{
   queryClient: QueryClient
@@ -84,6 +85,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         {children}
         <ScrollRestoration />
         <Scripts />
+        <Footer />
       </Body>
     </Html>
   )
