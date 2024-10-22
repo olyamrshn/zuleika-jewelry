@@ -11,8 +11,12 @@ export default function Nav() {
       </div>
 
       <div className="flex flex-col md:flex-row gap-10 mr-[8em]">
-        <div className="flex space-x-8 font-bold items-end">
-          <Link to="/e-store" className="mb-1">
+        <div className="flex space-x-8 font-bold items-center">
+          <Link to="/jewellery" className="mb-1 font-thin">
+            JEWELLERY
+          </Link>
+          <p className="font-thin"> — </p>
+          <Link to="/" className="mb-1">
             E-STORE
           </Link>
           <Link

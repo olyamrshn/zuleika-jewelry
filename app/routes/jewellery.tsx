@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router"
 
-export const Route = createFileRoute("/e-store")({
+export const Route = createFileRoute("/jewellery")({
   component: () => (
     <div className="w-full flex flex-row gap-20 px-10">
       <div className="flex pt-5 flex-col gap-10">
