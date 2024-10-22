@@ -4,7 +4,8 @@ module.exports = {
     extend: {
       fontFamily: {
         termina: ["Termina Test", "sans-serif"],
-        kepler: ['"Kepler Std"', "serif"],
+        kepler: ["Kepler Std"],
+        keplerCondensed: ["Kepler Std Condensed"],
       },
     },
   },
