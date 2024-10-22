@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router"
+import { Link } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/jewellery")({
   component: () => (
@@ -7,9 +8,15 @@ export const Route = createFileRoute("/jewellery")({
         <div>
           <h3 className="pb-5 text-sm font-semibold">Collections</h3>
           <ul className="space-y-1.5 text-neutral-500 text-md">
-            <li>NILOUFER</li>
-            <li>EDEN</li>
-            <li>POEM BANGLES</li>
+            <li>
+              <Link to="/collection/niloufer">NILOUFER</Link>
+            </li>
+            <li>
+              <Link to="/collection/eden">EDEN</Link>
+            </li>
+            <li>
+              <Link to="/collection/poem-bangles">POEM BANGLES</Link>
+            </li>
           </ul>
         </div>
         <div>
@@ -23,7 +30,6 @@ export const Route = createFileRoute("/jewellery")({
           </ul>
         </div>
       </div>
-
       <img
         src="../../public/images/estore.png"
         alt="estore"

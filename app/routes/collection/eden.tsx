@@ -33,7 +33,7 @@ const products = [
   },
 ]
 
-export const Route = createFileRoute("/collection")({
+export const Route = createFileRoute("/collection/eden")({
   component: () => (
     <div className="p-4 text-center min-h-screen">
       <h1 className="text-lg font-semibold mb-4">EDEN</h1>

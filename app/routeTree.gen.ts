@@ -10,180 +10,206 @@
 
 // Import Routes
 
-import { Route as rootRoute } from './routes/__root'
-import { Route as ProductImport } from './routes/product'
-import { Route as JewelleryImport } from './routes/jewellery'
-import { Route as DeferredImport } from './routes/deferred'
-import { Route as ContactImport } from './routes/contact'
-import { Route as CollectionImport } from './routes/collection'
-import { Route as BijouxDespaceImport } from './routes/bijoux-despace'
-import { Route as AtelierImport } from './routes/atelier'
-import { Route as AboutImport } from './routes/about'
-import { Route as LayoutImport } from './routes/_layout'
-import { Route as IndexImport } from './routes/index'
-import { Route as LayoutLayout2Import } from './routes/_layout/_layout-2'
-import { Route as LayoutLayout2LayoutBImport } from './routes/_layout/_layout-2/layout-b'
-import { Route as LayoutLayout2LayoutAImport } from './routes/_layout/_layout-2/layout-a'
+import { Route as rootRoute } from "./routes/__root"
+import { Route as ProductImport } from "./routes/product"
+import { Route as JewelleryImport } from "./routes/jewellery"
+import { Route as DeferredImport } from "./routes/deferred"
+import { Route as ContactImport } from "./routes/contact"
+import { Route as BijouxDespaceImport } from "./routes/bijoux-despace"
+import { Route as AtelierImport } from "./routes/atelier"
+import { Route as AboutImport } from "./routes/about"
+import { Route as LayoutImport } from "./routes/_layout"
+import { Route as IndexImport } from "./routes/index"
+import { Route as CollectionPoemBanglesImport } from "./routes/collection/poem-bangles"
+import { Route as CollectionNilouferImport } from "./routes/collection/niloufer"
+import { Route as CollectionEdenImport } from "./routes/collection/eden"
+import { Route as LayoutLayout2Import } from "./routes/_layout/_layout-2"
+import { Route as LayoutLayout2LayoutBImport } from "./routes/_layout/_layout-2/layout-b"
+import { Route as LayoutLayout2LayoutAImport } from "./routes/_layout/_layout-2/layout-a"
 
 // Create/Update Routes
 
 const ProductRoute = ProductImport.update({
-  path: '/product',
+  path: "/product",
   getParentRoute: () => rootRoute,
 } as any)
 
 const JewelleryRoute = JewelleryImport.update({
-  path: '/jewellery',
+  path: "/jewellery",
   getParentRoute: () => rootRoute,
 } as any)
 
 const DeferredRoute = DeferredImport.update({
-  path: '/deferred',
+  path: "/deferred",
   getParentRoute: () => rootRoute,
 } as any)
 
 const ContactRoute = ContactImport.update({
-  path: '/contact',
-  getParentRoute: () => rootRoute,
-} as any)
-
-const CollectionRoute = CollectionImport.update({
-  path: '/collection',
+  path: "/contact",
   getParentRoute: () => rootRoute,
 } as any)
 
 const BijouxDespaceRoute = BijouxDespaceImport.update({
-  path: '/bijoux-despace',
+  path: "/bijoux-despace",
   getParentRoute: () => rootRoute,
 } as any)
 
 const AtelierRoute = AtelierImport.update({
-  path: '/atelier',
+  path: "/atelier",
   getParentRoute: () => rootRoute,
 } as any)
 
 const AboutRoute = AboutImport.update({
-  path: '/about',
+  path: "/about",
   getParentRoute: () => rootRoute,
 } as any)
 
 const LayoutRoute = LayoutImport.update({
-  id: '/_layout',
+  id: "/_layout",
   getParentRoute: () => rootRoute,
 } as any)
 
 const IndexRoute = IndexImport.update({
-  path: '/',
+  path: "/",
+  getParentRoute: () => rootRoute,
+} as any)
+
+const CollectionPoemBanglesRoute = CollectionPoemBanglesImport.update({
+  path: "/collection/poem-bangles",
+  getParentRoute: () => rootRoute,
+} as any)
+
+const CollectionNilouferRoute = CollectionNilouferImport.update({
+  path: "/collection/niloufer",
+  getParentRoute: () => rootRoute,
+} as any)
+
+const CollectionEdenRoute = CollectionEdenImport.update({
+  path: "/collection/eden",
   getParentRoute: () => rootRoute,
 } as any)
 
 const LayoutLayout2Route = LayoutLayout2Import.update({
-  id: '/_layout-2',
+  id: "/_layout-2",
   getParentRoute: () => LayoutRoute,
 } as any)
 
 const LayoutLayout2LayoutBRoute = LayoutLayout2LayoutBImport.update({
-  path: '/layout-b',
+  path: "/layout-b",
   getParentRoute: () => LayoutLayout2Route,
 } as any)
 
 const LayoutLayout2LayoutARoute = LayoutLayout2LayoutAImport.update({
-  path: '/layout-a',
+  path: "/layout-a",
   getParentRoute: () => LayoutLayout2Route,
 } as any)
 
 // Populate the FileRoutesByPath interface
 
-declare module '@tanstack/react-router' {
+declare module "@tanstack/react-router" {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
+    "/": {
+      id: "/"
+      path: "/"
+      fullPath: "/"
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
-    '/_layout': {
-      id: '/_layout'
-      path: ''
-      fullPath: ''
+    "/_layout": {
+      id: "/_layout"
+      path: ""
+      fullPath: ""
       preLoaderRoute: typeof LayoutImport
       parentRoute: typeof rootRoute
     }
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
+    "/about": {
+      id: "/about"
+      path: "/about"
+      fullPath: "/about"
       preLoaderRoute: typeof AboutImport
       parentRoute: typeof rootRoute
     }
-    '/atelier': {
-      id: '/atelier'
-      path: '/atelier'
-      fullPath: '/atelier'
+    "/atelier": {
+      id: "/atelier"
+      path: "/atelier"
+      fullPath: "/atelier"
       preLoaderRoute: typeof AtelierImport
       parentRoute: typeof rootRoute
     }
-    '/bijoux-despace': {
-      id: '/bijoux-despace'
-      path: '/bijoux-despace'
-      fullPath: '/bijoux-despace'
+    "/bijoux-despace": {
+      id: "/bijoux-despace"
+      path: "/bijoux-despace"
+      fullPath: "/bijoux-despace"
       preLoaderRoute: typeof BijouxDespaceImport
       parentRoute: typeof rootRoute
     }
-    '/collection': {
-      id: '/collection'
-      path: '/collection'
-      fullPath: '/collection'
-      preLoaderRoute: typeof CollectionImport
-      parentRoute: typeof rootRoute
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
+    "/contact": {
+      id: "/contact"
+      path: "/contact"
+      fullPath: "/contact"
       preLoaderRoute: typeof ContactImport
       parentRoute: typeof rootRoute
     }
-    '/deferred': {
-      id: '/deferred'
-      path: '/deferred'
-      fullPath: '/deferred'
+    "/deferred": {
+      id: "/deferred"
+      path: "/deferred"
+      fullPath: "/deferred"
       preLoaderRoute: typeof DeferredImport
       parentRoute: typeof rootRoute
     }
-    '/jewellery': {
-      id: '/jewellery'
-      path: '/jewellery'
-      fullPath: '/jewellery'
+    "/jewellery": {
+      id: "/jewellery"
+      path: "/jewellery"
+      fullPath: "/jewellery"
       preLoaderRoute: typeof JewelleryImport
       parentRoute: typeof rootRoute
     }
-    '/product': {
-      id: '/product'
-      path: '/product'
-      fullPath: '/product'
+    "/product": {
+      id: "/product"
+      path: "/product"
+      fullPath: "/product"
       preLoaderRoute: typeof ProductImport
       parentRoute: typeof rootRoute
     }
-    '/_layout/_layout-2': {
-      id: '/_layout/_layout-2'
-      path: ''
-      fullPath: ''
+    "/_layout/_layout-2": {
+      id: "/_layout/_layout-2"
+      path: ""
+      fullPath: ""
       preLoaderRoute: typeof LayoutLayout2Import
       parentRoute: typeof LayoutImport
     }
-    '/_layout/_layout-2/layout-a': {
-      id: '/_layout/_layout-2/layout-a'
-      path: '/layout-a'
-      fullPath: '/layout-a'
+    "/collection/eden": {
+      id: "/collection/eden"
+      path: "/collection/eden"
+      fullPath: "/collection/eden"
+      preLoaderRoute: typeof CollectionEdenImport
+      parentRoute: typeof rootRoute
+    }
+    "/collection/niloufer": {
+      id: "/collection/niloufer"
+      path: "/collection/niloufer"
+      fullPath: "/collection/niloufer"
+      preLoaderRoute: typeof CollectionNilouferImport
+      parentRoute: typeof rootRoute
+    }
+    "/collection/poem-bangles": {
+      id: "/collection/poem-bangles"
+      path: "/collection/poem-bangles"
+      fullPath: "/collection/poem-bangles"
+      preLoaderRoute: typeof CollectionPoemBanglesImport
+      parentRoute: typeof rootRoute
+    }
+    "/_layout/_layout-2/layout-a": {
+      id: "/_layout/_layout-2/layout-a"
+      path: "/layout-a"
+      fullPath: "/layout-a"
       preLoaderRoute: typeof LayoutLayout2LayoutAImport
       parentRoute: typeof LayoutLayout2Import
     }
-    '/_layout/_layout-2/layout-b': {
-      id: '/_layout/_layout-2/layout-b'
-      path: '/layout-b'
-      fullPath: '/layout-b'
+    "/_layout/_layout-2/layout-b": {
+      id: "/_layout/_layout-2/layout-b"
+      path: "/layout-b"
+      fullPath: "/layout-b"
       preLoaderRoute: typeof LayoutLayout2LayoutBImport
       parentRoute: typeof LayoutLayout2Import
     }
@@ -218,96 +244,108 @@ const LayoutRouteWithChildren =
   LayoutRoute._addFileChildren(LayoutRouteChildren)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
-  '': typeof LayoutLayout2RouteWithChildren
-  '/about': typeof AboutRoute
-  '/atelier': typeof AtelierRoute
-  '/bijoux-despace': typeof BijouxDespaceRoute
-  '/collection': typeof CollectionRoute
-  '/contact': typeof ContactRoute
-  '/deferred': typeof DeferredRoute
-  '/jewellery': typeof JewelleryRoute
-  '/product': typeof ProductRoute
-  '/layout-a': typeof LayoutLayout2LayoutARoute
-  '/layout-b': typeof LayoutLayout2LayoutBRoute
+  "/": typeof IndexRoute
+  "": typeof LayoutLayout2RouteWithChildren
+  "/about": typeof AboutRoute
+  "/atelier": typeof AtelierRoute
+  "/bijoux-despace": typeof BijouxDespaceRoute
+  "/contact": typeof ContactRoute
+  "/deferred": typeof DeferredRoute
+  "/jewellery": typeof JewelleryRoute
+  "/product": typeof ProductRoute
+  "/collection/eden": typeof CollectionEdenRoute
+  "/collection/niloufer": typeof CollectionNilouferRoute
+  "/collection/poem-bangles": typeof CollectionPoemBanglesRoute
+  "/layout-a": typeof LayoutLayout2LayoutARoute
+  "/layout-b": typeof LayoutLayout2LayoutBRoute
 }
 
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
-  '': typeof LayoutLayout2RouteWithChildren
-  '/about': typeof AboutRoute
-  '/atelier': typeof AtelierRoute
-  '/bijoux-despace': typeof BijouxDespaceRoute
-  '/collection': typeof CollectionRoute
-  '/contact': typeof ContactRoute
-  '/deferred': typeof DeferredRoute
-  '/jewellery': typeof JewelleryRoute
-  '/product': typeof ProductRoute
-  '/layout-a': typeof LayoutLayout2LayoutARoute
-  '/layout-b': typeof LayoutLayout2LayoutBRoute
+  "/": typeof IndexRoute
+  "": typeof LayoutLayout2RouteWithChildren
+  "/about": typeof AboutRoute
+  "/atelier": typeof AtelierRoute
+  "/bijoux-despace": typeof BijouxDespaceRoute
+  "/contact": typeof ContactRoute
+  "/deferred": typeof DeferredRoute
+  "/jewellery": typeof JewelleryRoute
+  "/product": typeof ProductRoute
+  "/collection/eden": typeof CollectionEdenRoute
+  "/collection/niloufer": typeof CollectionNilouferRoute
+  "/collection/poem-bangles": typeof CollectionPoemBanglesRoute
+  "/layout-a": typeof LayoutLayout2LayoutARoute
+  "/layout-b": typeof LayoutLayout2LayoutBRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
-  '/': typeof IndexRoute
-  '/_layout': typeof LayoutRouteWithChildren
-  '/about': typeof AboutRoute
-  '/atelier': typeof AtelierRoute
-  '/bijoux-despace': typeof BijouxDespaceRoute
-  '/collection': typeof CollectionRoute
-  '/contact': typeof ContactRoute
-  '/deferred': typeof DeferredRoute
-  '/jewellery': typeof JewelleryRoute
-  '/product': typeof ProductRoute
-  '/_layout/_layout-2': typeof LayoutLayout2RouteWithChildren
-  '/_layout/_layout-2/layout-a': typeof LayoutLayout2LayoutARoute
-  '/_layout/_layout-2/layout-b': typeof LayoutLayout2LayoutBRoute
+  "/": typeof IndexRoute
+  "/_layout": typeof LayoutRouteWithChildren
+  "/about": typeof AboutRoute
+  "/atelier": typeof AtelierRoute
+  "/bijoux-despace": typeof BijouxDespaceRoute
+  "/contact": typeof ContactRoute
+  "/deferred": typeof DeferredRoute
+  "/jewellery": typeof JewelleryRoute
+  "/product": typeof ProductRoute
+  "/_layout/_layout-2": typeof LayoutLayout2RouteWithChildren
+  "/collection/eden": typeof CollectionEdenRoute
+  "/collection/niloufer": typeof CollectionNilouferRoute
+  "/collection/poem-bangles": typeof CollectionPoemBanglesRoute
+  "/_layout/_layout-2/layout-a": typeof LayoutLayout2LayoutARoute
+  "/_layout/_layout-2/layout-b": typeof LayoutLayout2LayoutBRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    | '/'
-    | ''
-    | '/about'
-    | '/atelier'
-    | '/bijoux-despace'
-    | '/collection'
-    | '/contact'
-    | '/deferred'
-    | '/jewellery'
-    | '/product'
-    | '/layout-a'
-    | '/layout-b'
+    | "/"
+    | ""
+    | "/about"
+    | "/atelier"
+    | "/bijoux-despace"
+    | "/contact"
+    | "/deferred"
+    | "/jewellery"
+    | "/product"
+    | "/collection/eden"
+    | "/collection/niloufer"
+    | "/collection/poem-bangles"
+    | "/layout-a"
+    | "/layout-b"
   fileRoutesByTo: FileRoutesByTo
   to:
-    | '/'
-    | ''
-    | '/about'
-    | '/atelier'
-    | '/bijoux-despace'
-    | '/collection'
-    | '/contact'
-    | '/deferred'
-    | '/jewellery'
-    | '/product'
-    | '/layout-a'
-    | '/layout-b'
+    | "/"
+    | ""
+    | "/about"
+    | "/atelier"
+    | "/bijoux-despace"
+    | "/contact"
+    | "/deferred"
+    | "/jewellery"
+    | "/product"
+    | "/collection/eden"
+    | "/collection/niloufer"
+    | "/collection/poem-bangles"
+    | "/layout-a"
+    | "/layout-b"
   id:
-    | '__root__'
-    | '/'
-    | '/_layout'
-    | '/about'
-    | '/atelier'
-    | '/bijoux-despace'
-    | '/collection'
-    | '/contact'
-    | '/deferred'
-    | '/jewellery'
-    | '/product'
-    | '/_layout/_layout-2'
-    | '/_layout/_layout-2/layout-a'
-    | '/_layout/_layout-2/layout-b'
+    | "__root__"
+    | "/"
+    | "/_layout"
+    | "/about"
+    | "/atelier"
+    | "/bijoux-despace"
+    | "/contact"
+    | "/deferred"
+    | "/jewellery"
+    | "/product"
+    | "/_layout/_layout-2"
+    | "/collection/eden"
+    | "/collection/niloufer"
+    | "/collection/poem-bangles"
+    | "/_layout/_layout-2/layout-a"
+    | "/_layout/_layout-2/layout-b"
   fileRoutesById: FileRoutesById
 }
 
@@ -317,11 +355,13 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   AtelierRoute: typeof AtelierRoute
   BijouxDespaceRoute: typeof BijouxDespaceRoute
-  CollectionRoute: typeof CollectionRoute
   ContactRoute: typeof ContactRoute
   DeferredRoute: typeof DeferredRoute
   JewelleryRoute: typeof JewelleryRoute
   ProductRoute: typeof ProductRoute
+  CollectionEdenRoute: typeof CollectionEdenRoute
+  CollectionNilouferRoute: typeof CollectionNilouferRoute
+  CollectionPoemBanglesRoute: typeof CollectionPoemBanglesRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
@@ -330,11 +370,13 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   AtelierRoute: AtelierRoute,
   BijouxDespaceRoute: BijouxDespaceRoute,
-  CollectionRoute: CollectionRoute,
   ContactRoute: ContactRoute,
   DeferredRoute: DeferredRoute,
   JewelleryRoute: JewelleryRoute,
   ProductRoute: ProductRoute,
+  CollectionEdenRoute: CollectionEdenRoute,
+  CollectionNilouferRoute: CollectionNilouferRoute,
+  CollectionPoemBanglesRoute: CollectionPoemBanglesRoute,
 }
 
 export const routeTree = rootRoute
@@ -354,11 +396,13 @@ export const routeTree = rootRoute
         "/about",
         "/atelier",
         "/bijoux-despace",
-        "/collection",
         "/contact",
         "/deferred",
         "/jewellery",
-        "/product"
+        "/product",
+        "/collection/eden",
+        "/collection/niloufer",
+        "/collection/poem-bangles"
       ]
     },
     "/": {
@@ -379,9 +423,6 @@ export const routeTree = rootRoute
     "/bijoux-despace": {
       "filePath": "bijoux-despace.tsx"
     },
-    "/collection": {
-      "filePath": "collection.tsx"
-    },
     "/contact": {
       "filePath": "contact.tsx"
     },
@@ -401,6 +442,15 @@ export const routeTree = rootRoute
         "/_layout/_layout-2/layout-a",
         "/_layout/_layout-2/layout-b"
       ]
+    },
+    "/collection/eden": {
+      "filePath": "collection/eden.tsx"
+    },
+    "/collection/niloufer": {
+      "filePath": "collection/niloufer.tsx"
+    },
+    "/collection/poem-bangles": {
+      "filePath": "collection/poem-bangles.tsx"
     },
     "/_layout/_layout-2/layout-a": {
       "filePath": "_layout/_layout-2/layout-a.tsx",
