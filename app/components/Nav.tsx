@@ -9,37 +9,46 @@ export default function Nav() {
 
   if (isAboutRoute) {
     return (
-      <nav className="flex flex-col items-center p-4 zuleika-text-color font-kepler">
-        {/* <div className="flex justify-start w-full mb-4">
+      <nav className="flex flex-col lg:flex-row items-center p-4 px-5 zuleika-text-color font-kepler">
+        <div className="flex justify-between lg:justify-start w-full lg:mb-4 order-1 lg:order-none">
           <div className="flex space-x-4">
             <a href="#">FR</a>
             <span>|</span>
             <a href="#">EN</a>
           </div>
-        </div> */}
-        <div className="text-center font-keplerCondensed">
-          <Link to="/" className="text-[100px]">
-            ZULEIKA
-          </Link>
+          <div className="flex lg:hidden space-x-4">
+            <span>* | * | * | *</span>
+          </div>
         </div>
 
-        <div className="flex justify-center text-sm space-x-16">
-          <Link to="/jewellery" className="ml-2 relative group">
-            <span>JEWELLERY</span>
-            <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+        <div className="text-center flex flex-col w-full lg:w-auto font-keplerCondensed order-0 lg:order-none mb-4 lg:mb-0">
+          <Link to="/" className="text-5xl lg:text-[100px] mb-4 lg:mb-0">
+            ZULEIKA
           </Link>
-          <Link to="/bijoux-despace" className="ml-2 relative group">
-            <span>BIJOUX D'ESPACE</span>
-            <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
-          </Link>
-          <Link to="/about" className="ml-2 relative group">
-            <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-100 transition-transform"></span>
-            <span>ABOUT</span>
-          </Link>
-          <Link to="/contact" className="ml-2 relative group">
-            <span>CONTACT</span>
-            <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
-          </Link>
+          <div className="flex flex-col lg:flex-row justify-center text-sm lg:space-x-10 space-y-4 lg:space-y-0">
+            <Link to="/jewellery" className="relative group inline-block">
+              <span>JEWELLERY</span>
+              <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+            </Link>
+            <Link to="/bijoux-despace" className="relative group inline-block">
+              <span>BIJOUX&nbsp;D'ESPACE</span>
+              <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+            </Link>
+            <Link to="/about" className="relative group inline-block">
+              <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-100 transition-transform"></span>
+              <span>ABOUT</span>
+            </Link>
+            <Link to="/contact" className="relative group inline-block">
+              <span>CONTACT</span>
+              <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+            </Link>
+          </div>
+        </div>
+
+        <div className="hidden lg:flex justify-end w-full lg:mb-4 order-2 lg:order-none mt-4 lg:mt-0">
+          <div className="flex space-x-4">
+            <span>* | * | * | *</span>
+          </div>
         </div>
       </nav>
     )
