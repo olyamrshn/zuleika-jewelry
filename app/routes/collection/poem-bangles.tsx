@@ -4,32 +4,32 @@ const products = [
   {
     name: "Niloufer Luna Necklace 40cm",
     price: "$0.000",
-    image: "../../public/images/eden.jpeg",
+    image: "https://images.omrshn.dev/collection.jpeg",
   },
   {
     name: "Niloufer Luna Necklace 80cm",
     price: "$0.000",
-    image: "../../public/images/eden.jpeg",
+    image: "https://images.omrshn.dev/collection.jpeg",
   },
   {
     name: "Niloufer Stella Earrings",
     price: "$0.000",
-    image: "../../public/images/eden.jpeg",
+    image: "https://images.omrshn.dev/collection.jpeg",
   },
   {
     name: "Niloufer Flora Brooch",
     price: "$0.000",
-    image: "../../public/images/eden.jpeg",
+    image: "https://images.omrshn.dev/collection.jpeg",
   },
   {
     name: "Niloufer Luna Bracelet",
     price: "$0.000",
-    image: "../../public/images/eden.jpeg",
+    image: "https://images.omrshn.dev/collection.jpeg",
   },
   {
     name: "Niloufer Stella Ring",
     price: "$0.000",
-    image: "../../public/images/eden.jpeg",
+    image: "https://images.omrshn.dev/collection.jpeg",
   },
 ]
 
