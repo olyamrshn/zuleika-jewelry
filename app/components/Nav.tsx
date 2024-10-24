@@ -110,8 +110,20 @@ export default function Nav() {
               <span>|</span>
               <a href="#">EN</a>
             </div>
-            <div className="flex lg:hidden space-x-4">
-              <span>* | * | * | *</span>
+
+            <div className="flex lg:hidden space-x-4 text-neutral-500">
+              <button>
+                <SearchIcon />
+              </button>
+              <button>
+                <UserIcon />
+              </button>
+              <button>
+                <HeartIcon />
+              </button>
+              <button>
+                <BagIcon />
+              </button>
             </div>
           </div>
 
