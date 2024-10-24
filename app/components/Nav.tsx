@@ -57,7 +57,7 @@ export default function Nav() {
   return (
     <div className="zuleika-text-color">
       {isJewelleryRoute ? (
-        <div className="flex flex-col sm:p-4 sm:flex-row justify-between font-kepler">
+        <div className="flex flex-col p-4 sm:flex-row justify-between font-kepler">
           <div className="flex flex-row font-semibold gap-5 items-center order-1 justify-between sm:order-2">
             <Link to="/" className="mb-1">
               E-STORE

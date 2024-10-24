@@ -3,7 +3,7 @@ import { Link } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/jewellery")({
   component: () => (
-    <div className="w-full flex flex-row gap-20 px-10">
+    <div className="w-full flex flex-col gap-10 px-10">
       <div className="flex pt-5 flex-col gap-10">
         <div>
           <h3 className="pb-5 text-sm font-semibold">Collections</h3>
@@ -33,7 +33,7 @@ export const Route = createFileRoute("/jewellery")({
       <img
         src="../../public/images/estore.png"
         alt="estore"
-        className="w-[80%] h-[700px] aspect-square object-cover"
+        className="w-full h-auto max-h-[700px] object-cover"
       />
     </div>
   ),
