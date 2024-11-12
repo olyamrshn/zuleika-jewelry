@@ -58,8 +58,17 @@ export default function Nav() {
     <div className="zuleika-text-color">
       {isJewelleryRoute ? (
         <div className="flex flex-col p-4 sm:flex-row justify-between font-kepler">
-          <div className="flex flex-row font-semibold gap-5 items-center order-1 justify-between sm:order-2">
-            <Link to="/" className="mb-1">
+          {/* Back button and category name */}
+          <div className="flex items-center justify-between mb-6 sm:hidden">
+            <Link to="/" className="flex items-center gap-2">
+              <ArrowIcon />
+              <span className="text-sm font-termina">JEWELLERY</span>
+            </Link>
+          </div>
+
+          {/* Logo section with E-STORE and ATELIER */}
+          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-5 order-1 sm:order-2">
+            <Link to="/" className="text-sm sm:mb-1">
               E-STORE
             </Link>
             <Link
@@ -68,12 +77,13 @@ export default function Nav() {
             >
               ZULEIKA
             </Link>
-            <Link to="/atelier" className="mb-1">
+            <Link to="/atelier" className="text-sm sm:mb-1">
               ATELIER
             </Link>
           </div>
 
-          <div className="flex flex-row justify-between items-center mt-4 sm:mt-0 order-2 sm:order-1">
+          {/* Back button for desktop */}
+          <div className="hidden sm:flex flex-row justify-between items-center mt-4 sm:mt-0 order-2 sm:order-1">
             <div className="flex">
               <Link
                 to="/"
@@ -87,7 +97,8 @@ export default function Nav() {
             </div>
           </div>
 
-          <div className="flex zuleika-text-color space-x-2 items-center mt-4 sm:mt-0 order-2 sm:order-3">
+          {/* Icons */}
+          <div className="flex zuleika-text-color space-x-4 justify-center mt-6 sm:mt-0 order-2 sm:order-3">
             <button>
               <SearchIcon />
             </button>

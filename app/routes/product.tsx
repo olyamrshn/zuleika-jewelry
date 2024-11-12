@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/product")({
   component: () => (
-    <div className="min-h-screen p-4">
+    <div className="p-4">
       <div className="flex flex-col lg:flex-row gap-3 max-w-screen justify-center mx-auto">
         <div className="w-[48%]">
           <img
@@ -11,7 +11,7 @@ export const Route = createFileRoute("/product")({
             className="w-full h-auto object-contain"
           />
         </div>
-        <div className="flex flex-row space-x-6 w-1/2">
+        <div className="flex flex-row items-start space-x-6 w-1/2">
           <div className="w-1/2">
             <div>
               <h1 className="text-md font-semibold w-[85%]">
@@ -20,7 +20,7 @@ export const Route = createFileRoute("/product")({
               <p className="text-sm my-4 opacity-55">$0 000</p>
             </div>
 
-            <p className="opacity-50 text-sm  leading-relaxed">
+            <p className="opacity-50 text-sm leading-relaxed">
               Take a classic that has stood the test of time, then pull it and
               twist it. Make people look twice. Smooth pearls are interspersed
               with handmade granulated gold cones, strikingly framing the face.

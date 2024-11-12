@@ -3,11 +3,13 @@ import { Link } from "@tanstack/react-router"
 
 export const Route = createFileRoute("/jewellery")({
   component: () => (
-    <div className="w-full flex flex-col gap-10 px-10">
-      <div className="flex pt-5 flex-col gap-10">
-        <div>
-          <h3 className="pb-5 text-sm font-semibold">Collections</h3>
-          <ul className="space-y-1.5 text-neutral-500 text-md">
+    <div className="flex flex-col md:flex-row md:gap-20 px-8">
+      <div className="flex flex-col">
+        <div className="py-2 md:py-10">
+          <h3 className="text-lg md:text-xl mb-4 md:mb-8 font-light tracking-wider">
+            Collections
+          </h3>
+          <ul className="space-y-2 md:space-y-4 text-neutral-600 font-light tracking-wider text-sm md:text-base">
             <li>
               <Link to="/collection/niloufer">NILOUFER</Link>
             </li>
@@ -19,9 +21,12 @@ export const Route = createFileRoute("/jewellery")({
             </li>
           </ul>
         </div>
-        <div>
-          <h3 className="pb-5 text-sm font-semibold">Categories</h3>
-          <ul className="space-y-1.5 text-neutral-500 text-sm">
+
+        <div className="pb-4 md:pb-8 md:py-8">
+          <h3 className="text-lg md:text-xl mb-4 md:mb-8 font-light tracking-wider">
+            Categories
+          </h3>
+          <ul className="space-y-2 md:space-y-4 text-neutral-600 font-light tracking-wider text-sm md:text-base">
             <li>Earrings</li>
             <li>Necklaces</li>
             <li>Bracelets</li>
@@ -30,10 +35,11 @@ export const Route = createFileRoute("/jewellery")({
           </ul>
         </div>
       </div>
+
       <img
         src="https://images.omrshn.dev/estore.png"
         alt="estore"
-        className="w-full h-auto max-h-[700px] object-cover"
+        className="w-full h-[60vh] md:h-auto md:flex-1 md:max-h-[800px] object-cover"
       />
     </div>
   ),
