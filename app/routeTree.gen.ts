@@ -18,14 +18,9 @@ import { Route as ContactImport } from "./routes/contact"
 import { Route as BijouxDespaceImport } from "./routes/bijoux-despace"
 import { Route as AtelierImport } from "./routes/atelier"
 import { Route as AboutImport } from "./routes/about"
-import { Route as LayoutImport } from "./routes/_layout"
 import { Route as IndexImport } from "./routes/index"
-import { Route as CollectionPoemBanglesImport } from "./routes/collection/poem-bangles"
-import { Route as CollectionNilouferImport } from "./routes/collection/niloufer"
-import { Route as CollectionEdenImport } from "./routes/collection/eden"
-import { Route as LayoutLayout2Import } from "./routes/_layout/_layout-2"
-import { Route as LayoutLayout2LayoutBImport } from "./routes/_layout/_layout-2/layout-b"
-import { Route as LayoutLayout2LayoutAImport } from "./routes/_layout/_layout-2/layout-a"
+import { Route as CollectionNameImport } from "./routes/collection/$name"
+import { Route as CollectionNameAboutImport } from "./routes/collection/$name.about"
 
 // Create/Update Routes
 
@@ -64,44 +59,19 @@ const AboutRoute = AboutImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-const LayoutRoute = LayoutImport.update({
-  id: "/_layout",
-  getParentRoute: () => rootRoute,
-} as any)
-
 const IndexRoute = IndexImport.update({
   path: "/",
   getParentRoute: () => rootRoute,
 } as any)
 
-const CollectionPoemBanglesRoute = CollectionPoemBanglesImport.update({
-  path: "/collection/poem-bangles",
+const CollectionNameRoute = CollectionNameImport.update({
+  path: "/collection/$name",
   getParentRoute: () => rootRoute,
 } as any)
 
-const CollectionNilouferRoute = CollectionNilouferImport.update({
-  path: "/collection/niloufer",
-  getParentRoute: () => rootRoute,
-} as any)
-
-const CollectionEdenRoute = CollectionEdenImport.update({
-  path: "/collection/eden",
-  getParentRoute: () => rootRoute,
-} as any)
-
-const LayoutLayout2Route = LayoutLayout2Import.update({
-  id: "/_layout-2",
-  getParentRoute: () => LayoutRoute,
-} as any)
-
-const LayoutLayout2LayoutBRoute = LayoutLayout2LayoutBImport.update({
-  path: "/layout-b",
-  getParentRoute: () => LayoutLayout2Route,
-} as any)
-
-const LayoutLayout2LayoutARoute = LayoutLayout2LayoutAImport.update({
-  path: "/layout-a",
-  getParentRoute: () => LayoutLayout2Route,
+const CollectionNameAboutRoute = CollectionNameAboutImport.update({
+  path: "/about",
+  getParentRoute: () => CollectionNameRoute,
 } as any)
 
 // Populate the FileRoutesByPath interface
@@ -113,13 +83,6 @@ declare module "@tanstack/react-router" {
       path: "/"
       fullPath: "/"
       preLoaderRoute: typeof IndexImport
-      parentRoute: typeof rootRoute
-    }
-    "/_layout": {
-      id: "/_layout"
-      path: ""
-      fullPath: ""
-      preLoaderRoute: typeof LayoutImport
       parentRoute: typeof rootRoute
     }
     "/about": {
@@ -171,81 +134,39 @@ declare module "@tanstack/react-router" {
       preLoaderRoute: typeof ProductImport
       parentRoute: typeof rootRoute
     }
-    "/_layout/_layout-2": {
-      id: "/_layout/_layout-2"
-      path: ""
-      fullPath: ""
-      preLoaderRoute: typeof LayoutLayout2Import
-      parentRoute: typeof LayoutImport
-    }
-    "/collection/eden": {
-      id: "/collection/eden"
-      path: "/collection/eden"
-      fullPath: "/collection/eden"
-      preLoaderRoute: typeof CollectionEdenImport
+    "/collection/$name": {
+      id: "/collection/$name"
+      path: "/collection/$name"
+      fullPath: "/collection/$name"
+      preLoaderRoute: typeof CollectionNameImport
       parentRoute: typeof rootRoute
     }
-    "/collection/niloufer": {
-      id: "/collection/niloufer"
-      path: "/collection/niloufer"
-      fullPath: "/collection/niloufer"
-      preLoaderRoute: typeof CollectionNilouferImport
-      parentRoute: typeof rootRoute
-    }
-    "/collection/poem-bangles": {
-      id: "/collection/poem-bangles"
-      path: "/collection/poem-bangles"
-      fullPath: "/collection/poem-bangles"
-      preLoaderRoute: typeof CollectionPoemBanglesImport
-      parentRoute: typeof rootRoute
-    }
-    "/_layout/_layout-2/layout-a": {
-      id: "/_layout/_layout-2/layout-a"
-      path: "/layout-a"
-      fullPath: "/layout-a"
-      preLoaderRoute: typeof LayoutLayout2LayoutAImport
-      parentRoute: typeof LayoutLayout2Import
-    }
-    "/_layout/_layout-2/layout-b": {
-      id: "/_layout/_layout-2/layout-b"
-      path: "/layout-b"
-      fullPath: "/layout-b"
-      preLoaderRoute: typeof LayoutLayout2LayoutBImport
-      parentRoute: typeof LayoutLayout2Import
+    "/collection/$name/about": {
+      id: "/collection/$name/about"
+      path: "/about"
+      fullPath: "/collection/$name/about"
+      preLoaderRoute: typeof CollectionNameAboutImport
+      parentRoute: typeof CollectionNameImport
     }
   }
 }
 
 // Create and export the route tree
 
-interface LayoutLayout2RouteChildren {
-  LayoutLayout2LayoutARoute: typeof LayoutLayout2LayoutARoute
-  LayoutLayout2LayoutBRoute: typeof LayoutLayout2LayoutBRoute
+interface CollectionNameRouteChildren {
+  CollectionNameAboutRoute: typeof CollectionNameAboutRoute
 }
 
-const LayoutLayout2RouteChildren: LayoutLayout2RouteChildren = {
-  LayoutLayout2LayoutARoute: LayoutLayout2LayoutARoute,
-  LayoutLayout2LayoutBRoute: LayoutLayout2LayoutBRoute,
+const CollectionNameRouteChildren: CollectionNameRouteChildren = {
+  CollectionNameAboutRoute: CollectionNameAboutRoute,
 }
 
-const LayoutLayout2RouteWithChildren = LayoutLayout2Route._addFileChildren(
-  LayoutLayout2RouteChildren,
+const CollectionNameRouteWithChildren = CollectionNameRoute._addFileChildren(
+  CollectionNameRouteChildren,
 )
-
-interface LayoutRouteChildren {
-  LayoutLayout2Route: typeof LayoutLayout2RouteWithChildren
-}
-
-const LayoutRouteChildren: LayoutRouteChildren = {
-  LayoutLayout2Route: LayoutLayout2RouteWithChildren,
-}
-
-const LayoutRouteWithChildren =
-  LayoutRoute._addFileChildren(LayoutRouteChildren)
 
 export interface FileRoutesByFullPath {
   "/": typeof IndexRoute
-  "": typeof LayoutLayout2RouteWithChildren
   "/about": typeof AboutRoute
   "/atelier": typeof AtelierRoute
   "/bijoux-despace": typeof BijouxDespaceRoute
@@ -253,16 +174,12 @@ export interface FileRoutesByFullPath {
   "/deferred": typeof DeferredRoute
   "/jewellery": typeof JewelleryRoute
   "/product": typeof ProductRoute
-  "/collection/eden": typeof CollectionEdenRoute
-  "/collection/niloufer": typeof CollectionNilouferRoute
-  "/collection/poem-bangles": typeof CollectionPoemBanglesRoute
-  "/layout-a": typeof LayoutLayout2LayoutARoute
-  "/layout-b": typeof LayoutLayout2LayoutBRoute
+  "/collection/$name": typeof CollectionNameRouteWithChildren
+  "/collection/$name/about": typeof CollectionNameAboutRoute
 }
 
 export interface FileRoutesByTo {
   "/": typeof IndexRoute
-  "": typeof LayoutLayout2RouteWithChildren
   "/about": typeof AboutRoute
   "/atelier": typeof AtelierRoute
   "/bijoux-despace": typeof BijouxDespaceRoute
@@ -270,17 +187,13 @@ export interface FileRoutesByTo {
   "/deferred": typeof DeferredRoute
   "/jewellery": typeof JewelleryRoute
   "/product": typeof ProductRoute
-  "/collection/eden": typeof CollectionEdenRoute
-  "/collection/niloufer": typeof CollectionNilouferRoute
-  "/collection/poem-bangles": typeof CollectionPoemBanglesRoute
-  "/layout-a": typeof LayoutLayout2LayoutARoute
-  "/layout-b": typeof LayoutLayout2LayoutBRoute
+  "/collection/$name": typeof CollectionNameRouteWithChildren
+  "/collection/$name/about": typeof CollectionNameAboutRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   "/": typeof IndexRoute
-  "/_layout": typeof LayoutRouteWithChildren
   "/about": typeof AboutRoute
   "/atelier": typeof AtelierRoute
   "/bijoux-despace": typeof BijouxDespaceRoute
@@ -288,19 +201,14 @@ export interface FileRoutesById {
   "/deferred": typeof DeferredRoute
   "/jewellery": typeof JewelleryRoute
   "/product": typeof ProductRoute
-  "/_layout/_layout-2": typeof LayoutLayout2RouteWithChildren
-  "/collection/eden": typeof CollectionEdenRoute
-  "/collection/niloufer": typeof CollectionNilouferRoute
-  "/collection/poem-bangles": typeof CollectionPoemBanglesRoute
-  "/_layout/_layout-2/layout-a": typeof LayoutLayout2LayoutARoute
-  "/_layout/_layout-2/layout-b": typeof LayoutLayout2LayoutBRoute
+  "/collection/$name": typeof CollectionNameRouteWithChildren
+  "/collection/$name/about": typeof CollectionNameAboutRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | "/"
-    | ""
     | "/about"
     | "/atelier"
     | "/bijoux-despace"
@@ -308,15 +216,11 @@ export interface FileRouteTypes {
     | "/deferred"
     | "/jewellery"
     | "/product"
-    | "/collection/eden"
-    | "/collection/niloufer"
-    | "/collection/poem-bangles"
-    | "/layout-a"
-    | "/layout-b"
+    | "/collection/$name"
+    | "/collection/$name/about"
   fileRoutesByTo: FileRoutesByTo
   to:
     | "/"
-    | ""
     | "/about"
     | "/atelier"
     | "/bijoux-despace"
@@ -324,15 +228,11 @@ export interface FileRouteTypes {
     | "/deferred"
     | "/jewellery"
     | "/product"
-    | "/collection/eden"
-    | "/collection/niloufer"
-    | "/collection/poem-bangles"
-    | "/layout-a"
-    | "/layout-b"
+    | "/collection/$name"
+    | "/collection/$name/about"
   id:
     | "__root__"
     | "/"
-    | "/_layout"
     | "/about"
     | "/atelier"
     | "/bijoux-despace"
@@ -340,18 +240,13 @@ export interface FileRouteTypes {
     | "/deferred"
     | "/jewellery"
     | "/product"
-    | "/_layout/_layout-2"
-    | "/collection/eden"
-    | "/collection/niloufer"
-    | "/collection/poem-bangles"
-    | "/_layout/_layout-2/layout-a"
-    | "/_layout/_layout-2/layout-b"
+    | "/collection/$name"
+    | "/collection/$name/about"
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  LayoutRoute: typeof LayoutRouteWithChildren
   AboutRoute: typeof AboutRoute
   AtelierRoute: typeof AtelierRoute
   BijouxDespaceRoute: typeof BijouxDespaceRoute
@@ -359,14 +254,11 @@ export interface RootRouteChildren {
   DeferredRoute: typeof DeferredRoute
   JewelleryRoute: typeof JewelleryRoute
   ProductRoute: typeof ProductRoute
-  CollectionEdenRoute: typeof CollectionEdenRoute
-  CollectionNilouferRoute: typeof CollectionNilouferRoute
-  CollectionPoemBanglesRoute: typeof CollectionPoemBanglesRoute
+  CollectionNameRoute: typeof CollectionNameRouteWithChildren
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  LayoutRoute: LayoutRouteWithChildren,
   AboutRoute: AboutRoute,
   AtelierRoute: AtelierRoute,
   BijouxDespaceRoute: BijouxDespaceRoute,
@@ -374,9 +266,7 @@ const rootRouteChildren: RootRouteChildren = {
   DeferredRoute: DeferredRoute,
   JewelleryRoute: JewelleryRoute,
   ProductRoute: ProductRoute,
-  CollectionEdenRoute: CollectionEdenRoute,
-  CollectionNilouferRoute: CollectionNilouferRoute,
-  CollectionPoemBanglesRoute: CollectionPoemBanglesRoute,
+  CollectionNameRoute: CollectionNameRouteWithChildren,
 }
 
 export const routeTree = rootRoute
@@ -392,7 +282,6 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/_layout",
         "/about",
         "/atelier",
         "/bijoux-despace",
@@ -400,19 +289,11 @@ export const routeTree = rootRoute
         "/deferred",
         "/jewellery",
         "/product",
-        "/collection/eden",
-        "/collection/niloufer",
-        "/collection/poem-bangles"
+        "/collection/$name"
       ]
     },
     "/": {
       "filePath": "index.tsx"
-    },
-    "/_layout": {
-      "filePath": "_layout.tsx",
-      "children": [
-        "/_layout/_layout-2"
-      ]
     },
     "/about": {
       "filePath": "about.tsx"
@@ -435,30 +316,15 @@ export const routeTree = rootRoute
     "/product": {
       "filePath": "product.tsx"
     },
-    "/_layout/_layout-2": {
-      "filePath": "_layout/_layout-2.tsx",
-      "parent": "/_layout",
+    "/collection/$name": {
+      "filePath": "collection/$name.tsx",
       "children": [
-        "/_layout/_layout-2/layout-a",
-        "/_layout/_layout-2/layout-b"
+        "/collection/$name/about"
       ]
     },
-    "/collection/eden": {
-      "filePath": "collection/eden.tsx"
-    },
-    "/collection/niloufer": {
-      "filePath": "collection/niloufer.tsx"
-    },
-    "/collection/poem-bangles": {
-      "filePath": "collection/poem-bangles.tsx"
-    },
-    "/_layout/_layout-2/layout-a": {
-      "filePath": "_layout/_layout-2/layout-a.tsx",
-      "parent": "/_layout/_layout-2"
-    },
-    "/_layout/_layout-2/layout-b": {
-      "filePath": "_layout/_layout-2/layout-b.tsx",
-      "parent": "/_layout/_layout-2"
+    "/collection/$name/about": {
+      "filePath": "collection/$name.about.tsx",
+      "parent": "/collection/$name"
     }
   }
 }

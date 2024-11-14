@@ -25,22 +25,33 @@ export default function Nav() {
           <Link to="/" className="text-5xl lg:text-[100px] mb-4 lg:mb-0">
             ZULEIKA
           </Link>
-          <div className="flex flex-col lg:flex-row justify-center text-sm lg:space-x-10 space-y-4 lg:space-y-0">
-            <Link to="/jewellery" className="relative group inline-block">
-              <span>JEWELLERY</span>
-              <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+          <div className="flex flex-col sm:flex-row justify-center items-center text-sm gap-4 sm:gap-8 md:gap-10">
+            <Link to="/jewellery" className="group">
+              <span className="relative inline-block">
+                JEWELLERY
+                <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+              </span>
             </Link>
-            <Link to="/bijoux-despace" className="relative group inline-block">
-              <span>BIJOUX&nbsp;D'ESPACE</span>
-              <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+
+            <Link to="/bijoux-despace" className="group">
+              <span className="relative inline-block">
+                BIJOUX&nbsp;D'ESPACE
+                <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+              </span>
             </Link>
-            <Link to="/about" className="relative group inline-block">
-              <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-100 transition-transform"></span>
-              <span>ABOUT</span>
+
+            <Link to="/about" className="group">
+              <span className="relative inline-block">
+                ABOUT
+                <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+              </span>
             </Link>
-            <Link to="/contact" className="relative group inline-block">
-              <span>CONTACT</span>
-              <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+
+            <Link to="/contact" className="group">
+              <span className="relative inline-block">
+                CONTACT
+                <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+              </span>
             </Link>
           </div>
         </div>
@@ -66,7 +77,6 @@ export default function Nav() {
             </Link>
           </div>
 
-          {/* Logo section with E-STORE and ATELIER */}
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-5 order-1 sm:order-2">
             <Link to="/" className="text-sm sm:mb-1">
               E-STORE
@@ -147,28 +157,39 @@ export default function Nav() {
               ZULEIKA
             </Link>
             <div className="flex flex-col lg:flex-row justify-center text-sm lg:space-x-10 space-y-4 lg:space-y-0">
-              <Link to="/jewellery" className="relative group inline-block">
-                <span>STORE</span>
-                <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+              <Link to="/jewellery" className="group">
+                <span className="relative inline-block">
+                  STORE
+                  <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+                </span>
               </Link>
-              <Link
-                to="/bijoux-despace"
-                className="relative group inline-block"
-              >
-                <span>BIJOUX&nbsp;D'ESPACE</span>
-                <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+
+              <Link to="/bijoux-despace" className="group">
+                <span className="relative inline-block">
+                  BIJOUX&nbsp;D'ESPACE
+                  <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+                </span>
               </Link>
-              <Link to="/atelier" className="relative group inline-block">
-                <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
-                <span>ATELIER</span>
+
+              <Link to="/atelier" className="group">
+                <span className="relative inline-block">
+                  ATELIER
+                  <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+                </span>
               </Link>
-              <Link to="/about" className="relative group inline-block">
-                <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
-                <span>ABOUT</span>
+
+              <Link to="/about" className="group">
+                <span className="relative inline-block">
+                  ABOUT
+                  <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+                </span>
               </Link>
-              <Link to="/contact" className="relative group inline-block">
-                <span>CONTACT</span>
-                <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+
+              <Link to="/contact" className="group">
+                <span className="relative inline-block">
+                  CONTACT
+                  <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+                </span>
               </Link>
             </div>
           </div>

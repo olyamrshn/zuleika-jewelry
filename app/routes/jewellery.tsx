@@ -11,13 +11,19 @@ export const Route = createFileRoute("/jewellery")({
           </h3>
           <ul className="space-y-2 md:space-y-4 text-neutral-600 font-light tracking-wider text-sm md:text-base">
             <li>
-              <Link to="/collection/niloufer">NILOUFER</Link>
+              <Link to={"/collection/$name"} params={{ name: "niloufer" }}>
+                NILOUFER
+              </Link>
             </li>
             <li>
-              <Link to="/collection/eden">EDEN</Link>
+              <Link to={"/collection/$name"} params={{ name: "eden" }}>
+                EDEN
+              </Link>
             </li>
             <li>
-              <Link to="/collection/poem-bangles">POEM BANGLES</Link>
+              <Link to={"/collection/$name"} params={{ name: "poem-bangles" }}>
+                POEM BANGLES
+              </Link>
             </li>
           </ul>
         </div>
