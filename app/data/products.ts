@@ -5,6 +5,8 @@ export interface Product {
   name: string
   price: string
   image: string
+  image2?: string
+  image3?: string
   description: string
   details: {
     size: string
@@ -26,7 +28,8 @@ export const products: Record<CollectionName, Product[]> = {
       id: "eden-flora-necklace",
       name: "Eden Flora Necklace 40cm in yellow gold and pearls",
       price: "$1.000",
-      image: "https://images.omrshn.dev/collection.jpeg",
+      image: "https://images.omrshn.dev/neck.jpeg",
+      image2: "https://images.omrshn.dev/collection.jpeg",
       description:
         "Take a classic that has stood the test of time, then pull it and twist it. Make people look twice. Smooth pearls are interspersed with handmade granulated gold cones, strikingly framing the face.",
       details: {
@@ -51,7 +54,8 @@ export const products: Record<CollectionName, Product[]> = {
       id: "eden-stella-ring",
       name: "Eden Stella Ring",
       price: "$1.000",
-      image: "https://images.omrshn.dev/collection.jpeg",
+      image: "https://images.omrshn.dev/ears.jpg",
+      image2: "https://images.omrshn.dev/collection.jpeg",
       description:
         "A stunning statement ring featuring intricate granulation work in 18k yellow gold, inspired by the natural patterns found in Eden's garden.",
       details: {
@@ -78,7 +82,9 @@ export const products: Record<CollectionName, Product[]> = {
       id: "niloufer-luna-necklace",
       name: "Niloufer Luna Necklace 40cm in yellow gold and pearls",
       price: "$2.000",
-      image: "https://images.omrshn.dev/collection.jpeg",
+
+      image: "https://images.omrshn.dev/ears.jpg",
+      image2: "https://images.omrshn.dev/collection.jpeg",
       description:
         "Take a classic that has stood the test of time, then pull it and twist it. Make people look twice. Smooth pearls are interspersed with handmade granulated gold cones, strikingly framing the face.",
       details: {
@@ -103,7 +109,8 @@ export const products: Record<CollectionName, Product[]> = {
       id: "niloufer-stella-earrings",
       name: "Niloufer Stella Earrings",
       price: "$2.000",
-      image: "https://images.omrshn.dev/collection.jpeg",
+      image: "https://images.omrshn.dev/neck.jpeg",
+      image2: "https://images.omrshn.dev/collection.jpeg",
       description:
         "Elegant drop earrings featuring Persian-inspired motifs, handcrafted in 18k yellow gold with delicate granulation work.",
       details: {
@@ -130,7 +137,8 @@ export const products: Record<CollectionName, Product[]> = {
       id: "poem-bangles-1",
       name: "Poem Bangle Classic in yellow gold and pearls",
       price: "$3.000",
-      image: "https://images.omrshn.dev/collection.jpeg",
+      image: "https://images.omrshn.dev/ring.jpg",
+      image2: "https://images.omrshn.dev/collection.jpeg",
       description:
         "A timeless bangle design featuring flowing lines and intricate granulation work, creating poetry in motion on your wrist.",
       details: {
@@ -155,7 +163,8 @@ export const products: Record<CollectionName, Product[]> = {
       id: "poem-bangles-2",
       name: "Poem Bangle Verse",
       price: "$3.000",
-      image: "https://images.omrshn.dev/collection.jpeg",
+      image: "https://images.omrshn.dev/neck.jpeg",
+      image2: "https://images.omrshn.dev/collection.jpeg",
       description:
         "An artistic interpretation of written verse translated into precious metal, featuring undulating forms and delicate granulation.",
       details: {
