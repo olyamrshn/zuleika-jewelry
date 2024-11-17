@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router"
+import { createFileRoute, Outlet } from "@tanstack/react-router"
 import { Link } from "@tanstack/react-router"
 import CollectionNav from "~/components/CollectionNav"
 import { collections, type CollectionName } from "~/data/collections"
@@ -23,6 +23,7 @@ function RouteComponent() {
     <div className="p-4 text-center min-h-screen">
       <h1 className="text-lg font-semibold mb-4">{name.toUpperCase()}</h1>
       <CollectionNav collectionName={name} />
+      <Outlet />
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-1">
         {products[name as CollectionName].map((product) => (
           <div key={product.name} className="p-2">
