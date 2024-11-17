@@ -21,7 +21,7 @@ export const products: Record<CollectionName, Product[]> = {
     {
       id: "eden-flora-necklace",
       name: "Eden Flora Necklace 40cm",
-      price: "$0.000",
+      price: "$1.000",
       image: "https://images.omrshn.dev/collection.jpeg",
       description:
         "Take a classic that has stood the test of time, then pull it and twist it. Make people look twice. Smooth pearls are interspersed with handmade granulated gold cones, strikingly framing the face.",
@@ -38,7 +38,7 @@ export const products: Record<CollectionName, Product[]> = {
     {
       id: "eden-stella-ring",
       name: "Eden Stella Ring",
-      price: "$0.000",
+      price: "$1.000",
       image: "https://images.omrshn.dev/collection.jpeg",
       description:
         "A stunning statement ring featuring intricate granulation work in 18k yellow gold, inspired by the natural patterns found in Eden's garden.",
@@ -57,7 +57,7 @@ export const products: Record<CollectionName, Product[]> = {
     {
       id: "niloufer-luna-necklace",
       name: "Niloufer Luna Necklace 40cm",
-      price: "$0.000",
+      price: "$2.000",
       image: "https://images.omrshn.dev/collection.jpeg",
       description:
         "Take a classic that has stood the test of time, then pull it and twist it. Make people look twice. Smooth pearls are interspersed with handmade granulated gold cones, strikingly framing the face.",
@@ -74,7 +74,7 @@ export const products: Record<CollectionName, Product[]> = {
     {
       id: "niloufer-stella-earrings",
       name: "Niloufer Stella Earrings",
-      price: "$0.000",
+      price: "$2.000",
       image: "https://images.omrshn.dev/collection.jpeg",
       description:
         "Elegant drop earrings featuring Persian-inspired motifs, handcrafted in 18k yellow gold with delicate granulation work.",
@@ -93,7 +93,7 @@ export const products: Record<CollectionName, Product[]> = {
     {
       id: "poem-bangles-1",
       name: "Poem Bangle Classic",
-      price: "$0.000",
+      price: "$3.000",
       image: "https://images.omrshn.dev/collection.jpeg",
       description:
         "A timeless bangle design featuring flowing lines and intricate granulation work, creating poetry in motion on your wrist.",
@@ -110,7 +110,7 @@ export const products: Record<CollectionName, Product[]> = {
     {
       id: "poem-bangles-2",
       name: "Poem Bangle Verse",
-      price: "$0.000",
+      price: "$3.000",
       image: "https://images.omrshn.dev/collection.jpeg",
       description:
         "An artistic interpretation of written verse translated into precious metal, featuring undulating forms and delicate granulation.",

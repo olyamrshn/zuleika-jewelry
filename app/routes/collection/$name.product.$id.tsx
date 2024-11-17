@@ -54,6 +54,34 @@ function ProductComponent() {
                   Add to bag
                 </button>
               </div>
+
+              <div className="space-y-6 mt-8">
+                <div>
+                  <h2 className="text-sm mb-2">Description</h2>
+                  <p className="text-sm opacity-50">
+                    {product.details.fullDescription}
+                  </p>
+                </div>
+
+                <div>
+                  <h2 className="text-sm mb-2">Materials</h2>
+                  <p className="text-sm opacity-50">
+                    {product.details.materials}
+                  </p>
+                </div>
+
+                <div>
+                  <h2 className="text-sm mb-2">Weight</h2>
+                  <p className="text-sm opacity-50">{product.details.weight}</p>
+                </div>
+
+                <div>
+                  <h2 className="text-sm mb-2">Dimensions</h2>
+                  <p className="text-sm opacity-50">
+                    {product.details.dimensions}
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
