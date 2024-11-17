@@ -22,9 +22,5 @@ function RouteComponent() {
 }
 
 export const Route = createFileRoute("/collection/$name/about")({
-  parseParams: (params: Record<string, string>): { name: CollectionName } => {
-    const name = params.name as CollectionName
-    return Object.keys(collections).includes(name) ? { name } : { name: "eden" }
-  },
   component: RouteComponent,
 })
