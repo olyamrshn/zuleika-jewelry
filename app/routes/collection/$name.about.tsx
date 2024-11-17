@@ -14,6 +14,7 @@ function RouteComponent() {
     <div className="p-4 text-center min-h-screen">
       <h1 className="text-lg font-semibold mb-4">{collection.about.title}</h1>
       <div>RENDER .....</div>
+      <CollectionNav collectionName={name} />
       <div className="max-w-2xl mx-auto mt-8">
         <p className="text-left">{collection.about.description}</p>
       </div>

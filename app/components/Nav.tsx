@@ -69,11 +69,10 @@ export default function Nav() {
     <div className="zuleika-text-color">
       {isJewelleryRoute ? (
         <div className="flex flex-col p-4 sm:flex-row justify-between font-kepler">
-          {/* Back button and category name */}
           <div className="flex items-center justify-between mb-6 sm:hidden">
             <Link to="/" className="flex items-center gap-2">
               <ArrowIcon />
-              <span className="text-sm font-termina">JEWELLERY</span>
+              <span className="text-sm text-black font-termina">JEWELLERY</span>
             </Link>
           </div>
 
@@ -92,7 +91,6 @@ export default function Nav() {
             </Link>
           </div>
 
-          {/* Back button for desktop */}
           <div className="hidden sm:flex flex-row justify-between items-center mt-4 sm:mt-0 order-2 sm:order-1">
             <div className="flex">
               <Link
@@ -107,18 +105,17 @@ export default function Nav() {
             </div>
           </div>
 
-          {/* Icons */}
           <div className="flex zuleika-text-color space-x-4 justify-center mt-6 sm:mt-0 order-2 sm:order-3">
-            <button>
+            <button className="hover:scale-110 transition-transform">
               <SearchIcon />
             </button>
-            <button>
+            <button className="hover:scale-110 transition-transform">
               <UserIcon />
             </button>
-            <button>
+            <button className="hover:scale-110 transition-transform">
               <HeartIcon />
             </button>
-            <button>
+            <button className="hover:scale-110 transition-transform">
               <BagIcon />
             </button>
           </div>
@@ -133,16 +130,16 @@ export default function Nav() {
             </div>
 
             <div className="flex lg:hidden space-x-4 text-neutral-500">
-              <button>
+              <button className="hover:scale-110 transition-transform">
                 <SearchIcon />
               </button>
-              <button>
+              <button className="hover:scale-110 transition-transform">
                 <UserIcon />
               </button>
-              <button>
+              <button className="hover:scale-110 transition-transform">
                 <HeartIcon />
               </button>
-              <button>
+              <button className="hover:scale-110 transition-transform">
                 <BagIcon />
               </button>
             </div>
@@ -151,7 +148,7 @@ export default function Nav() {
           <div className="text-center flex flex-col w-full lg:w-auto font-keplerCondensed order-0 lg:order-none mb-4 lg:mb-0">
             <Link
               to="/"
-              className="text-4xl mb-6 lg:mb-0"
+              className="text-4xl mb-0"
               style={{ lineHeight: "2", letterSpacing: "0.1em" }}
             >
               ZULEIKA
@@ -196,16 +193,16 @@ export default function Nav() {
 
           <div className="hidden lg:flex justify-end w-full lg:mb-4 order-2 lg:order-none mt-4 lg:mt-0">
             <div className="flex space-x-4 text-neutral-500">
-              <button>
+              <button className="hover:scale-110 transition-transform">
                 <SearchIcon />
               </button>
-              <button>
+              <button className="hover:scale-110 transition-transform">
                 <UserIcon />
               </button>
-              <button>
+              <button className="hover:scale-110 transition-transform">
                 <HeartIcon />
               </button>
-              <button>
+              <button className="hover:scale-110 transition-transform">
                 <BagIcon />
               </button>
             </div>

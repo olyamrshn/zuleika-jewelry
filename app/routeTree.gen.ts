@@ -10,142 +10,142 @@
 
 // Import Routes
 
-import { Route as rootRoute } from "./routes/__root"
-import { Route as ProductImport } from "./routes/product"
-import { Route as JewelleryImport } from "./routes/jewellery"
-import { Route as DeferredImport } from "./routes/deferred"
-import { Route as ContactImport } from "./routes/contact"
-import { Route as BijouxDespaceImport } from "./routes/bijoux-despace"
-import { Route as AtelierImport } from "./routes/atelier"
-import { Route as AboutImport } from "./routes/about"
-import { Route as IndexImport } from "./routes/index"
-import { Route as CollectionNameImport } from "./routes/collection/$name"
-import { Route as CollectionNameAboutImport } from "./routes/collection/$name.about"
+import { Route as rootRoute } from './routes/__root'
+import { Route as JewelleryImport } from './routes/jewellery'
+import { Route as DeferredImport } from './routes/deferred'
+import { Route as ContactImport } from './routes/contact'
+import { Route as BijouxDespaceImport } from './routes/bijoux-despace'
+import { Route as AtelierImport } from './routes/atelier'
+import { Route as AboutImport } from './routes/about'
+import { Route as IndexImport } from './routes/index'
+import { Route as CollectionNameImport } from './routes/collection/$name'
+import { Route as CollectionNameAboutImport } from './routes/collection/$name.about'
+import { Route as CollectionNameProductIdImport } from './routes/collection/$name.product.$id'
 
 // Create/Update Routes
 
-const ProductRoute = ProductImport.update({
-  path: "/product",
-  getParentRoute: () => rootRoute,
-} as any)
-
 const JewelleryRoute = JewelleryImport.update({
-  path: "/jewellery",
+  path: '/jewellery',
   getParentRoute: () => rootRoute,
 } as any)
 
 const DeferredRoute = DeferredImport.update({
-  path: "/deferred",
+  path: '/deferred',
   getParentRoute: () => rootRoute,
 } as any)
 
 const ContactRoute = ContactImport.update({
-  path: "/contact",
+  path: '/contact',
   getParentRoute: () => rootRoute,
 } as any)
 
 const BijouxDespaceRoute = BijouxDespaceImport.update({
-  path: "/bijoux-despace",
+  path: '/bijoux-despace',
   getParentRoute: () => rootRoute,
 } as any)
 
 const AtelierRoute = AtelierImport.update({
-  path: "/atelier",
+  path: '/atelier',
   getParentRoute: () => rootRoute,
 } as any)
 
 const AboutRoute = AboutImport.update({
-  path: "/about",
+  path: '/about',
   getParentRoute: () => rootRoute,
 } as any)
 
 const IndexRoute = IndexImport.update({
-  path: "/",
+  path: '/',
   getParentRoute: () => rootRoute,
 } as any)
 
 const CollectionNameRoute = CollectionNameImport.update({
-  path: "/collection/$name",
+  path: '/collection/$name',
   getParentRoute: () => rootRoute,
 } as any)
 
 const CollectionNameAboutRoute = CollectionNameAboutImport.update({
-  path: "/about",
+  path: '/about',
+  getParentRoute: () => CollectionNameRoute,
+} as any)
+
+const CollectionNameProductIdRoute = CollectionNameProductIdImport.update({
+  path: '/product/$id',
   getParentRoute: () => CollectionNameRoute,
 } as any)
 
 // Populate the FileRoutesByPath interface
 
-declare module "@tanstack/react-router" {
+declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    "/": {
-      id: "/"
-      path: "/"
-      fullPath: "/"
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
-    "/about": {
-      id: "/about"
-      path: "/about"
-      fullPath: "/about"
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
       preLoaderRoute: typeof AboutImport
       parentRoute: typeof rootRoute
     }
-    "/atelier": {
-      id: "/atelier"
-      path: "/atelier"
-      fullPath: "/atelier"
+    '/atelier': {
+      id: '/atelier'
+      path: '/atelier'
+      fullPath: '/atelier'
       preLoaderRoute: typeof AtelierImport
       parentRoute: typeof rootRoute
     }
-    "/bijoux-despace": {
-      id: "/bijoux-despace"
-      path: "/bijoux-despace"
-      fullPath: "/bijoux-despace"
+    '/bijoux-despace': {
+      id: '/bijoux-despace'
+      path: '/bijoux-despace'
+      fullPath: '/bijoux-despace'
       preLoaderRoute: typeof BijouxDespaceImport
       parentRoute: typeof rootRoute
     }
-    "/contact": {
-      id: "/contact"
-      path: "/contact"
-      fullPath: "/contact"
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
       preLoaderRoute: typeof ContactImport
       parentRoute: typeof rootRoute
     }
-    "/deferred": {
-      id: "/deferred"
-      path: "/deferred"
-      fullPath: "/deferred"
+    '/deferred': {
+      id: '/deferred'
+      path: '/deferred'
+      fullPath: '/deferred'
       preLoaderRoute: typeof DeferredImport
       parentRoute: typeof rootRoute
     }
-    "/jewellery": {
-      id: "/jewellery"
-      path: "/jewellery"
-      fullPath: "/jewellery"
+    '/jewellery': {
+      id: '/jewellery'
+      path: '/jewellery'
+      fullPath: '/jewellery'
       preLoaderRoute: typeof JewelleryImport
       parentRoute: typeof rootRoute
     }
-    "/product": {
-      id: "/product"
-      path: "/product"
-      fullPath: "/product"
-      preLoaderRoute: typeof ProductImport
-      parentRoute: typeof rootRoute
-    }
-    "/collection/$name": {
-      id: "/collection/$name"
-      path: "/collection/$name"
-      fullPath: "/collection/$name"
+    '/collection/$name': {
+      id: '/collection/$name'
+      path: '/collection/$name'
+      fullPath: '/collection/$name'
       preLoaderRoute: typeof CollectionNameImport
       parentRoute: typeof rootRoute
     }
-    "/collection/$name/about": {
-      id: "/collection/$name/about"
-      path: "/about"
-      fullPath: "/collection/$name/about"
+    '/collection/$name/about': {
+      id: '/collection/$name/about'
+      path: '/about'
+      fullPath: '/collection/$name/about'
       preLoaderRoute: typeof CollectionNameAboutImport
+      parentRoute: typeof CollectionNameImport
+    }
+    '/collection/$name/product/$id': {
+      id: '/collection/$name/product/$id'
+      path: '/product/$id'
+      fullPath: '/collection/$name/product/$id'
+      preLoaderRoute: typeof CollectionNameProductIdImport
       parentRoute: typeof CollectionNameImport
     }
   }
@@ -155,10 +155,12 @@ declare module "@tanstack/react-router" {
 
 interface CollectionNameRouteChildren {
   CollectionNameAboutRoute: typeof CollectionNameAboutRoute
+  CollectionNameProductIdRoute: typeof CollectionNameProductIdRoute
 }
 
 const CollectionNameRouteChildren: CollectionNameRouteChildren = {
   CollectionNameAboutRoute: CollectionNameAboutRoute,
+  CollectionNameProductIdRoute: CollectionNameProductIdRoute,
 }
 
 const CollectionNameRouteWithChildren = CollectionNameRoute._addFileChildren(
@@ -166,82 +168,82 @@ const CollectionNameRouteWithChildren = CollectionNameRoute._addFileChildren(
 )
 
 export interface FileRoutesByFullPath {
-  "/": typeof IndexRoute
-  "/about": typeof AboutRoute
-  "/atelier": typeof AtelierRoute
-  "/bijoux-despace": typeof BijouxDespaceRoute
-  "/contact": typeof ContactRoute
-  "/deferred": typeof DeferredRoute
-  "/jewellery": typeof JewelleryRoute
-  "/product": typeof ProductRoute
-  "/collection/$name": typeof CollectionNameRouteWithChildren
-  "/collection/$name/about": typeof CollectionNameAboutRoute
+  '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/atelier': typeof AtelierRoute
+  '/bijoux-despace': typeof BijouxDespaceRoute
+  '/contact': typeof ContactRoute
+  '/deferred': typeof DeferredRoute
+  '/jewellery': typeof JewelleryRoute
+  '/collection/$name': typeof CollectionNameRouteWithChildren
+  '/collection/$name/about': typeof CollectionNameAboutRoute
+  '/collection/$name/product/$id': typeof CollectionNameProductIdRoute
 }
 
 export interface FileRoutesByTo {
-  "/": typeof IndexRoute
-  "/about": typeof AboutRoute
-  "/atelier": typeof AtelierRoute
-  "/bijoux-despace": typeof BijouxDespaceRoute
-  "/contact": typeof ContactRoute
-  "/deferred": typeof DeferredRoute
-  "/jewellery": typeof JewelleryRoute
-  "/product": typeof ProductRoute
-  "/collection/$name": typeof CollectionNameRouteWithChildren
-  "/collection/$name/about": typeof CollectionNameAboutRoute
+  '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/atelier': typeof AtelierRoute
+  '/bijoux-despace': typeof BijouxDespaceRoute
+  '/contact': typeof ContactRoute
+  '/deferred': typeof DeferredRoute
+  '/jewellery': typeof JewelleryRoute
+  '/collection/$name': typeof CollectionNameRouteWithChildren
+  '/collection/$name/about': typeof CollectionNameAboutRoute
+  '/collection/$name/product/$id': typeof CollectionNameProductIdRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
-  "/": typeof IndexRoute
-  "/about": typeof AboutRoute
-  "/atelier": typeof AtelierRoute
-  "/bijoux-despace": typeof BijouxDespaceRoute
-  "/contact": typeof ContactRoute
-  "/deferred": typeof DeferredRoute
-  "/jewellery": typeof JewelleryRoute
-  "/product": typeof ProductRoute
-  "/collection/$name": typeof CollectionNameRouteWithChildren
-  "/collection/$name/about": typeof CollectionNameAboutRoute
+  '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/atelier': typeof AtelierRoute
+  '/bijoux-despace': typeof BijouxDespaceRoute
+  '/contact': typeof ContactRoute
+  '/deferred': typeof DeferredRoute
+  '/jewellery': typeof JewelleryRoute
+  '/collection/$name': typeof CollectionNameRouteWithChildren
+  '/collection/$name/about': typeof CollectionNameAboutRoute
+  '/collection/$name/product/$id': typeof CollectionNameProductIdRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    | "/"
-    | "/about"
-    | "/atelier"
-    | "/bijoux-despace"
-    | "/contact"
-    | "/deferred"
-    | "/jewellery"
-    | "/product"
-    | "/collection/$name"
-    | "/collection/$name/about"
+    | '/'
+    | '/about'
+    | '/atelier'
+    | '/bijoux-despace'
+    | '/contact'
+    | '/deferred'
+    | '/jewellery'
+    | '/collection/$name'
+    | '/collection/$name/about'
+    | '/collection/$name/product/$id'
   fileRoutesByTo: FileRoutesByTo
   to:
-    | "/"
-    | "/about"
-    | "/atelier"
-    | "/bijoux-despace"
-    | "/contact"
-    | "/deferred"
-    | "/jewellery"
-    | "/product"
-    | "/collection/$name"
-    | "/collection/$name/about"
+    | '/'
+    | '/about'
+    | '/atelier'
+    | '/bijoux-despace'
+    | '/contact'
+    | '/deferred'
+    | '/jewellery'
+    | '/collection/$name'
+    | '/collection/$name/about'
+    | '/collection/$name/product/$id'
   id:
-    | "__root__"
-    | "/"
-    | "/about"
-    | "/atelier"
-    | "/bijoux-despace"
-    | "/contact"
-    | "/deferred"
-    | "/jewellery"
-    | "/product"
-    | "/collection/$name"
-    | "/collection/$name/about"
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/atelier'
+    | '/bijoux-despace'
+    | '/contact'
+    | '/deferred'
+    | '/jewellery'
+    | '/collection/$name'
+    | '/collection/$name/about'
+    | '/collection/$name/product/$id'
   fileRoutesById: FileRoutesById
 }
 
@@ -253,7 +255,6 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   DeferredRoute: typeof DeferredRoute
   JewelleryRoute: typeof JewelleryRoute
-  ProductRoute: typeof ProductRoute
   CollectionNameRoute: typeof CollectionNameRouteWithChildren
 }
 
@@ -265,7 +266,6 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   DeferredRoute: DeferredRoute,
   JewelleryRoute: JewelleryRoute,
-  ProductRoute: ProductRoute,
   CollectionNameRoute: CollectionNameRouteWithChildren,
 }
 
@@ -288,7 +288,6 @@ export const routeTree = rootRoute
         "/contact",
         "/deferred",
         "/jewellery",
-        "/product",
         "/collection/$name"
       ]
     },
@@ -313,17 +312,19 @@ export const routeTree = rootRoute
     "/jewellery": {
       "filePath": "jewellery.tsx"
     },
-    "/product": {
-      "filePath": "product.tsx"
-    },
     "/collection/$name": {
       "filePath": "collection/$name.tsx",
       "children": [
-        "/collection/$name/about"
+        "/collection/$name/about",
+        "/collection/$name/product/$id"
       ]
     },
     "/collection/$name/about": {
       "filePath": "collection/$name.about.tsx",
+      "parent": "/collection/$name"
+    },
+    "/collection/$name/product/$id": {
+      "filePath": "collection/$name.product.$id.tsx",
       "parent": "/collection/$name"
     }
   }

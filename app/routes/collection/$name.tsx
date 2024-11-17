@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router"
 import CollectionNav from "~/components/CollectionNav"
 import { collections, type CollectionName } from "~/data/collections"
 import { NotFound } from "~/components/NotFound"
+import { products } from "~/data/products"
 
 function RouteComponent() {
   const { name } = Route.useParams()
@@ -23,9 +24,12 @@ function RouteComponent() {
       <h1 className="text-lg font-semibold mb-4">{name.toUpperCase()}</h1>
       <CollectionNav collectionName={name} />
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-1">
-        {collection.products.map((product) => (
+        {products[name as CollectionName].map((product) => (
           <div key={product.name} className="p-2">
-            <Link to="/product">
+            <Link
+              to="/collection/$name/product/$id"
+              params={{ name, id: product.id }}
+            >
               <img
                 src={product.image}
                 className="w-full h-auto aspect-square"

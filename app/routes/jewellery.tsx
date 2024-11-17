@@ -11,18 +11,39 @@ export const Route = createFileRoute("/jewellery")({
           </h3>
           <ul className="space-y-2 md:space-y-4 text-neutral-600 font-light tracking-wider text-sm md:text-base">
             <li>
-              <Link to={"/collection/$name"} params={{ name: "niloufer" }}>
-                NILOUFER
+              <Link
+                to={"/collection/$name"}
+                params={{ name: "niloufer" }}
+                className="group"
+              >
+                <span className="relative inline-block">
+                  NILOUFER
+                  <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+                </span>
               </Link>
             </li>
             <li>
-              <Link to={"/collection/$name"} params={{ name: "eden" }}>
-                EDEN
+              <Link
+                to={"/collection/$name"}
+                params={{ name: "eden" }}
+                className="group"
+              >
+                <span className="relative inline-block">
+                  EDEN
+                  <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+                </span>
               </Link>
             </li>
             <li>
-              <Link to={"/collection/$name"} params={{ name: "poem-bangles" }}>
-                POEM BANGLES
+              <Link
+                to={"/collection/$name"}
+                params={{ name: "poem-bangles" }}
+                className="group"
+              >
+                <span className="relative inline-block">
+                  POEM BANGLES
+                  <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+                </span>
               </Link>
             </li>
           </ul>
@@ -33,11 +54,36 @@ export const Route = createFileRoute("/jewellery")({
             Categories
           </h3>
           <ul className="space-y-2 md:space-y-4 text-neutral-600 font-light tracking-wider text-sm md:text-base">
-            <li>Earrings</li>
-            <li>Necklaces</li>
-            <li>Bracelets</li>
-            <li>Rings</li>
-            <li>See All</li>
+            <li className="group hover:cursor-pointer">
+              <span className="relative inline-block">
+                Earrings
+                <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+              </span>
+            </li>
+            <li className="group hover:cursor-pointer">
+              <span className="relative inline-block">
+                Necklaces
+                <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+              </span>
+            </li>
+            <li className="group hover:cursor-pointer">
+              <span className="relative inline-block">
+                Bracelets
+                <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+              </span>
+            </li>
+            <li className="group hover:cursor-pointer">
+              <span className="relative inline-block">
+                Rings
+                <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+              </span>
+            </li>
+            <li className="group hover:cursor-pointer">
+              <span className="relative inline-block">
+                See All
+                <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+              </span>
+            </li>
           </ul>
         </div>
       </div>
