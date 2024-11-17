@@ -2,9 +2,13 @@ import { createFileRoute } from "@tanstack/react-router"
 import { type CollectionName } from "~/data/collections"
 import { products, type Product } from "~/data/products"
 import { NotFound } from "~/components/NotFound"
+import { useState } from "react"
 
 function ProductComponent() {
   const { name, id } = Route.useParams()
+  const [activeTab, setActiveTab] = useState<
+    "description" | "about" | "savoir" | "shipping" | "care"
+  >("description")
 
   if (!name) {
     return <NotFound />
@@ -20,69 +24,101 @@ function ProductComponent() {
     return <NotFound />
   }
 
+  const tabs = [
+    { id: "description", label: "Description" },
+    { id: "about", label: "About the collection" },
+    { id: "savoir", label: "Savoir faire" },
+    { id: "shipping", label: "Shipping" },
+    { id: "care", label: "Care advice" },
+  ] as const
+
+  const tabContent = {
+    description: product.details.fullDescription,
+    about: product.details.aboutCollection,
+    savoir: product.details.savoirFaire,
+    shipping: product.details.shipping,
+    care: product.details.careAdvice,
+  } as const
+
+  const renderTabContent = () => tabContent[activeTab]
+  const getTabTitle = () => tabs.find((tab) => tab.id === activeTab)?.label
+
   return (
-    <div className="p-4">
-      <div className="flex flex-col lg:flex-row gap-3 max-w-screen justify-center mx-auto">
-        <div className="w-full lg:w-[48%]">
+    <div className="mx-auto">
+      <div className="flex flex-col lg:flex-row gap-3 max-w-screen-xl justify-center mx-auto">
+        <div className="w-full lg:w-1/2 lg:mr-5">
           <img
             src={product.image}
             alt={product.name}
             className="w-full h-auto object-contain"
           />
         </div>
-        <div className="flex flex-col lg:flex-row items-start space-x-0 lg:space-x-6 space-y-6 lg:space-y-0 w-full lg:w-1/2">
-          <div className="w-full lg:w-1/2">
+
+        <div className="w-full space-y-8 lg:w-1/4 md:mr-10 text-left">
+          <div className="flex flex-col gap-8 items-start">
+            <h1 className="text-md font-semibold">{product.name}</h1>
+            <p className="text-sm opacity-55">{product.price}</p>
+          </div>
+
+          <p className="opacity-50 text-sm leading-relaxed">
+            {product.description}
+          </p>
+
+          <div className="space-y-4 my-5">
             <div>
-              <h1 className="text-md font-semibold w-[85%]">{product.name}</h1>
-              <p className="text-sm my-4 opacity-55">{product.price}</p>
+              <h2 className="text-sm mb-2">Size:</h2>
+              <div className="flex gap-2">
+                <p className="text-sm">{product.details.size}</p>
+              </div>
             </div>
 
-            <p className="opacity-50 text-sm leading-relaxed">
-              {product.description}
-            </p>
+            <div>
+              <button className="w-full text-sm my-3 p-2 py-3 border-2 border-black bg-inherit hover:bg-amber-400/10 transition-colors duration-300 rounded-none text-center">
+                Add to bag
+              </button>
+            </div>
 
-            <div className="space-y-4 my-5">
-              <div>
-                <h2 className="text-sm mb-2">Size:</h2>
-                <div className="flex gap-2">
-                  <p className="text-sm">{product.details.size}</p>
-                </div>
-              </div>
-
-              <div className="flex justify-center lg:justify-start w-full">
-                <button className="w-[90%] text-sm my-3 p-2 py-3 border-2 border-black bg-inherit hover:bg-amber-400/10 transition-colors duration-300 rounded-none">
-                  Add to bag
+            <div className="flex flex-wrap gap-4 text-sm mt-8">
+              {tabs.map(({ id, label }) => (
+                <button
+                  key={id}
+                  onClick={() => setActiveTab(id)}
+                  className="group relative"
+                >
+                  <span className={`${activeTab === id ? "" : "opacity-50"}`}>
+                    {label}
+                  </span>
+                  <span
+                    className={`absolute left-0 -bottom-0.5 w-full h-px bg-current transform transition-transform ${
+                      activeTab === id
+                        ? "scale-x-100"
+                        : "scale-x-0 group-hover:scale-x-100"
+                    }`}
+                  />
                 </button>
-              </div>
-
-              <div className="space-y-6 mt-8">
-                <div>
-                  <h2 className="text-sm mb-2">Description</h2>
-                  <p className="text-sm opacity-50">
-                    {product.details.fullDescription}
-                  </p>
-                </div>
-
-                <div>
-                  <h2 className="text-sm mb-2">Materials</h2>
-                  <p className="text-sm opacity-50">
-                    {product.details.materials}
-                  </p>
-                </div>
-
-                <div>
-                  <h2 className="text-sm mb-2">Weight</h2>
-                  <p className="text-sm opacity-50">{product.details.weight}</p>
-                </div>
-
-                <div>
-                  <h2 className="text-sm mb-2">Dimensions</h2>
-                  <p className="text-sm opacity-50">
-                    {product.details.dimensions}
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
+          </div>
+        </div>
+
+        <div className="w-full lg:w-1/4 space-y-6 text-left">
+          <div className="mt-4">
+            <h2 className="text-sm mb-6 font-medium">{getTabTitle()}</h2>
+            <p className="text-sm opacity-50">{renderTabContent()}</p>
+          </div>
+          <div>
+            <h2 className="text-sm font-medium mb-2">Materials</h2>
+            <p className="text-sm opacity-50">{product.details.materials}</p>
+          </div>
+
+          <div>
+            <h2 className="text-sm font-medium mb-2">Weight</h2>
+            <p className="text-sm opacity-50">{product.details.weight}</p>
+          </div>
+
+          <div>
+            <h2 className="text-sm font-medium mb-2">Dimensions</h2>
+            <p className="text-sm opacity-50">{product.details.dimensions}</p>
           </div>
         </div>
       </div>

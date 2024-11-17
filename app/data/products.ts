@@ -12,6 +12,10 @@ export interface Product {
     weight: string
     dimensions: string
     fullDescription: string
+    aboutCollection: string
+    savoirFaire: string
+    shipping: string
+    careAdvice: string
   }
   collection: CollectionName
 }
@@ -20,7 +24,7 @@ export const products: Record<CollectionName, Product[]> = {
   eden: [
     {
       id: "eden-flora-necklace",
-      name: "Eden Flora Necklace 40cm",
+      name: "Eden Flora Necklace 40cm in yellow gold and pearls",
       price: "$1.000",
       image: "https://images.omrshn.dev/collection.jpeg",
       description:
@@ -32,6 +36,14 @@ export const products: Record<CollectionName, Product[]> = {
         dimensions: "40cm long",
         fullDescription:
           "A 40cm string of 8mm round pearls, interspersed with 9 granulated gold cone caps that fit snugly around the pearls. The lock detail has been considered with care, a granulated button clasp.",
+        aboutCollection:
+          "The Eden collection represents nature's perfect harmony",
+        savoirFaire:
+          "We use a technique called granulation, where we create a pattern by melting gold and then cooling it to create a sphere. This is a very delicate process that requires a lot of skill and patience.",
+        shipping:
+          "We offer free shipping on all orders over $500. For orders under $500, shipping is $50.",
+        careAdvice:
+          "We recommend storing your jewelry in a cool, dry place away from direct sunlight and heat sources. Avoid contact with harsh chemicals and perfumes.",
       },
       collection: "eden",
     },
@@ -49,6 +61,14 @@ export const products: Record<CollectionName, Product[]> = {
         dimensions: "Band width: 0.8cm",
         fullDescription:
           "An elegant ring showcasing masterful granulation technique, with delicate gold spheres arranged in a mesmerizing pattern. The ring's design draws inspiration from the geometric patterns found in nature.",
+        aboutCollection:
+          "The Eden collection represents nature's perfect harmony...",
+        savoirFaire:
+          "For this ring, we use a technique called granulation, where we create a pattern by melting gold and then cooling it to create a sphere. This is a very delicate process that requires a lot of skill and patience.",
+        shipping:
+          "We offer free shipping on all orders over $500. For orders under $500, shipping is $50.",
+        careAdvice:
+          "We recommend storing your jewelry in a cool, dry place away from direct sunlight and heat sources. Avoid contact with harsh chemicals and perfumes.",
       },
       collection: "eden",
     },
@@ -56,7 +76,7 @@ export const products: Record<CollectionName, Product[]> = {
   niloufer: [
     {
       id: "niloufer-luna-necklace",
-      name: "Niloufer Luna Necklace 40cm",
+      name: "Niloufer Luna Necklace 40cm in yellow gold and pearls",
       price: "$2.000",
       image: "https://images.omrshn.dev/collection.jpeg",
       description:
@@ -68,6 +88,14 @@ export const products: Record<CollectionName, Product[]> = {
         dimensions: "40cm long",
         fullDescription:
           "A 40cm string of 8mm round pearls, interspersed with 9 granulated gold cone caps that fit snugly around the pearls. The lock detail has been considered with care, a granulated button clasp.",
+        aboutCollection:
+          "The Niloufer collection represents nature's perfect harmony...",
+        savoirFaire:
+          "We use a technique called granulation, where we create a pattern by melting gold and then cooling it to create a sphere. This is a very delicate process that requires a lot of skill and patience.",
+        shipping:
+          "We offer free shipping on all orders over $500. For orders under $500, shipping is $50.",
+        careAdvice:
+          "We recommend storing your jewelry in a cool, dry place away from direct sunlight and heat sources. Avoid contact with harsh chemicals and perfumes.",
       },
       collection: "niloufer",
     },
@@ -85,6 +113,14 @@ export const products: Record<CollectionName, Product[]> = {
         dimensions: "Length: 3.5cm",
         fullDescription:
           "These statement earrings showcase the finest granulation technique, with each gold sphere carefully placed to create a mesmerizing pattern inspired by Persian gardens. The earrings feature secure butterfly backs for comfortable wear.",
+        aboutCollection:
+          "The Niloufer collection represents nature's perfect harmony...",
+        savoirFaire:
+          "We use a technique called granulation, where we create a pattern by melting gold and then cooling it to create a sphere. This is a very delicate process that requires a lot of skill and patience.",
+        shipping:
+          "We offer free shipping on all orders over $500. For orders under $500, shipping is $50.",
+        careAdvice:
+          "We recommend storing your jewelry in a cool, dry place away from direct sunlight and heat sources. Avoid contact with harsh chemicals and perfumes.",
       },
       collection: "niloufer",
     },
@@ -92,7 +128,7 @@ export const products: Record<CollectionName, Product[]> = {
   "poem-bangles": [
     {
       id: "poem-bangles-1",
-      name: "Poem Bangle Classic",
+      name: "Poem Bangle Classic in yellow gold and pearls",
       price: "$3.000",
       image: "https://images.omrshn.dev/collection.jpeg",
       description:
@@ -104,6 +140,14 @@ export const products: Record<CollectionName, Product[]> = {
         dimensions: "Diameter: 6.5cm",
         fullDescription:
           "This signature bangle from our Poem collection features a continuous flow of granulated gold spheres, creating a rhythmic pattern that catches and plays with light. The bangle opens with a hidden clasp mechanism.",
+        aboutCollection:
+          "The Poem collection represents nature's perfect harmony...",
+        savoirFaire:
+          "We use a technique called granulation, where we create a pattern by melting gold and then cooling it to create a sphere. This is a very delicate process that requires a lot of skill and patience.",
+        shipping:
+          "We offer free shipping on all orders over $500. For orders under $500, shipping is $50.",
+        careAdvice:
+          "We recommend storing your jewelry in a cool, dry place away from direct sunlight and heat sources. Avoid contact with harsh chemicals and perfumes.",
       },
       collection: "poem-bangles",
     },
@@ -121,6 +165,14 @@ export const products: Record<CollectionName, Product[]> = {
         dimensions: "Diameter: 6.5cm",
         fullDescription:
           "The Verse bangle transforms written poetry into wearable art, with waves of granulated gold creating a visual rhythm. Each sphere is carefully placed to represent the cadence of poetic meter.",
+        aboutCollection:
+          "The Poem collection represents nature's perfect harmony...",
+        savoirFaire:
+          "We use a technique called granulation, where we create a pattern by melting gold and then cooling it to create a sphere. This is a very delicate process that requires a lot of skill and patience.",
+        shipping:
+          "We offer free shipping on all orders over $500. For orders under $500, shipping is $50.",
+        careAdvice:
+          "We recommend storing your jewelry in a cool, dry place away from direct sunlight and heat sources. Avoid contact with harsh chemicals and perfumes.",
       },
       collection: "poem-bangles",
     },

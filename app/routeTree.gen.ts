@@ -19,6 +19,7 @@ import { Route as AtelierImport } from './routes/atelier'
 import { Route as AboutImport } from './routes/about'
 import { Route as IndexImport } from './routes/index'
 import { Route as CollectionNameImport } from './routes/collection/$name'
+import { Route as CollectionNameIndexImport } from './routes/collection/$name.index'
 import { Route as CollectionNameAboutImport } from './routes/collection/$name.about'
 import { Route as CollectionNameProductIdImport } from './routes/collection/$name.product.$id'
 
@@ -62,6 +63,11 @@ const IndexRoute = IndexImport.update({
 const CollectionNameRoute = CollectionNameImport.update({
   path: '/collection/$name',
   getParentRoute: () => rootRoute,
+} as any)
+
+const CollectionNameIndexRoute = CollectionNameIndexImport.update({
+  path: '/',
+  getParentRoute: () => CollectionNameRoute,
 } as any)
 
 const CollectionNameAboutRoute = CollectionNameAboutImport.update({
@@ -141,6 +147,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CollectionNameAboutImport
       parentRoute: typeof CollectionNameImport
     }
+    '/collection/$name/': {
+      id: '/collection/$name/'
+      path: '/'
+      fullPath: '/collection/$name/'
+      preLoaderRoute: typeof CollectionNameIndexImport
+      parentRoute: typeof CollectionNameImport
+    }
     '/collection/$name/product/$id': {
       id: '/collection/$name/product/$id'
       path: '/product/$id'
@@ -155,11 +168,13 @@ declare module '@tanstack/react-router' {
 
 interface CollectionNameRouteChildren {
   CollectionNameAboutRoute: typeof CollectionNameAboutRoute
+  CollectionNameIndexRoute: typeof CollectionNameIndexRoute
   CollectionNameProductIdRoute: typeof CollectionNameProductIdRoute
 }
 
 const CollectionNameRouteChildren: CollectionNameRouteChildren = {
   CollectionNameAboutRoute: CollectionNameAboutRoute,
+  CollectionNameIndexRoute: CollectionNameIndexRoute,
   CollectionNameProductIdRoute: CollectionNameProductIdRoute,
 }
 
@@ -177,6 +192,7 @@ export interface FileRoutesByFullPath {
   '/jewellery': typeof JewelleryRoute
   '/collection/$name': typeof CollectionNameRouteWithChildren
   '/collection/$name/about': typeof CollectionNameAboutRoute
+  '/collection/$name/': typeof CollectionNameIndexRoute
   '/collection/$name/product/$id': typeof CollectionNameProductIdRoute
 }
 
@@ -188,8 +204,8 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/deferred': typeof DeferredRoute
   '/jewellery': typeof JewelleryRoute
-  '/collection/$name': typeof CollectionNameRouteWithChildren
   '/collection/$name/about': typeof CollectionNameAboutRoute
+  '/collection/$name': typeof CollectionNameIndexRoute
   '/collection/$name/product/$id': typeof CollectionNameProductIdRoute
 }
 
@@ -204,6 +220,7 @@ export interface FileRoutesById {
   '/jewellery': typeof JewelleryRoute
   '/collection/$name': typeof CollectionNameRouteWithChildren
   '/collection/$name/about': typeof CollectionNameAboutRoute
+  '/collection/$name/': typeof CollectionNameIndexRoute
   '/collection/$name/product/$id': typeof CollectionNameProductIdRoute
 }
 
@@ -219,6 +236,7 @@ export interface FileRouteTypes {
     | '/jewellery'
     | '/collection/$name'
     | '/collection/$name/about'
+    | '/collection/$name/'
     | '/collection/$name/product/$id'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -229,8 +247,8 @@ export interface FileRouteTypes {
     | '/contact'
     | '/deferred'
     | '/jewellery'
-    | '/collection/$name'
     | '/collection/$name/about'
+    | '/collection/$name'
     | '/collection/$name/product/$id'
   id:
     | '__root__'
@@ -243,6 +261,7 @@ export interface FileRouteTypes {
     | '/jewellery'
     | '/collection/$name'
     | '/collection/$name/about'
+    | '/collection/$name/'
     | '/collection/$name/product/$id'
   fileRoutesById: FileRoutesById
 }
@@ -316,11 +335,16 @@ export const routeTree = rootRoute
       "filePath": "collection/$name.tsx",
       "children": [
         "/collection/$name/about",
+        "/collection/$name/",
         "/collection/$name/product/$id"
       ]
     },
     "/collection/$name/about": {
       "filePath": "collection/$name.about.tsx",
+      "parent": "/collection/$name"
+    },
+    "/collection/$name/": {
+      "filePath": "collection/$name.index.tsx",
       "parent": "/collection/$name"
     },
     "/collection/$name/product/$id": {
