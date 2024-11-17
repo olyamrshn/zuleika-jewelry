@@ -45,7 +45,7 @@ export const Route = createFileRoute("/about")({
             />
           </div>
           <div className="text-content w-full md:w-1/2 md:pl-28 flex flex-col justify-center">
-            <h2 className="text-xl font-semibold mb-14">{block.title}</h2>
+            <h2 className="text-xl font-semibold mb-8">{block.title}</h2>
             <p className="text-xs leading-loose">{block.description}</p>
           </div>
         </div>

@@ -7,7 +7,7 @@ interface CollectionNavProps {
 
 export default function CollectionNav({ collectionName }: CollectionNavProps) {
   return (
-    <div className="flex justify-center space-x-8 mb-8 text-sm font-light">
+    <div className="flex justify-center space-x-8 mb-8 text-sm font-normal">
       <Link
         to="/collection/$name"
         params={{ name: collectionName }}

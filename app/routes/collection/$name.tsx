@@ -1,9 +1,13 @@
-import { createFileRoute, Outlet } from "@tanstack/react-router"
+import { createFileRoute, Outlet, useMatches } from "@tanstack/react-router"
 import { collections, type CollectionName } from "~/data/collections"
 import { NotFound } from "~/components/NotFound"
 
 function RouteComponent() {
   const { name } = Route.useParams()
+  const matches = useMatches()
+  const isProductRoute = matches.some((match) =>
+    match.pathname.includes("/product/"),
+  )
 
   if (!name) {
     return <NotFound />
@@ -17,7 +21,9 @@ function RouteComponent() {
 
   return (
     <div className="p-4 text-center min-h-screen">
-      <h1 className="text-lg font-semibold mb-4">{name.toUpperCase()}</h1>
+      {!isProductRoute && (
+        <h1 className="text-lg font-semibold mb-4">{name.toUpperCase()}</h1>
+      )}
       <Outlet />
     </div>
   )

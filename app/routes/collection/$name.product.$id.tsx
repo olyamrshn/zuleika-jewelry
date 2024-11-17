@@ -45,7 +45,7 @@ function ProductComponent() {
 
   return (
     <div className="mx-auto">
-      <div className="flex flex-col lg:flex-row gap-3 max-w-screen-xl justify-center mx-auto">
+      <div className="flex flex-col lg:flex-row gap-3 w-[95%] justify-center mx-auto">
         <div className="w-full lg:w-1/2 lg:mr-5">
           <img
             src={product.image}
@@ -67,8 +67,9 @@ function ProductComponent() {
           <div className="space-y-4 my-5">
             <div>
               <h2 className="text-sm mb-2">Size:</h2>
-              <div className="flex gap-2">
+              <div className="group inline-block relative">
                 <p className="text-sm">{product.details.size}</p>
+                <span className="scale-x-100 absolute left-0 -bottom-0.5 w-full h-[2px] bg-current transition-transform group-hover:scale-x-100"></span>
               </div>
             </div>
 
@@ -85,14 +86,18 @@ function ProductComponent() {
                   onClick={() => setActiveTab(id)}
                   className="group relative"
                 >
-                  <span className={`${activeTab === id ? "" : "opacity-50"}`}>
+                  <span
+                    className={`${
+                      activeTab === id ? "" : "opacity-50 hover:opacity-100"
+                    } transition-opacity duration-300`}
+                  >
                     {label}
                   </span>
                   <span
-                    className={`absolute left-0 -bottom-0.5 w-full h-px bg-current transform transition-transform ${
+                    className={`absolute left-0 -bottom-0.5 w-full h-[2px] bg-current transform transition-transform ${
                       activeTab === id
                         ? "scale-x-100"
-                        : "scale-x-0 group-hover:scale-x-100"
+                        : "scale-x-0 group-hover:scale-x-100 h-[1px] transition-transform duration-200"
                     }`}
                   />
                 </button>
@@ -104,7 +109,9 @@ function ProductComponent() {
         <div className="w-full lg:w-1/4 space-y-6 text-left">
           <div className="mt-4">
             <h2 className="text-sm mb-6 font-medium">{getTabTitle()}</h2>
-            <p className="text-sm opacity-50">{renderTabContent()}</p>
+            <p className="text-sm opacity-50 leading-relaxed">
+              {renderTabContent()}
+            </p>
           </div>
           <div>
             <h2 className="text-sm font-medium mb-2">Materials</h2>
