@@ -21,16 +21,16 @@ function RouteComponent() {
               onMouseEnter={() => setHoveredProduct(product.id)}
               onMouseLeave={() => setHoveredProduct(null)}
             >
-              <div className="relative">
+              <div className="relative w-full pt-[100%]">
                 <img
                   src={product.image}
-                  className="w-full h-auto aspect-square absolute inset-0"
+                  className="absolute inset-0 w-full h-full object-cover"
                   alt={product.name}
                 />
                 {product.image2 && (
                   <img
                     src={product.image2}
-                    className={`w-full h-auto aspect-square absolute inset-0 transition-opacity duration-300 ${
+                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${
                       hoveredProduct === product.id
                         ? "opacity-100"
                         : "opacity-0"
@@ -41,7 +41,7 @@ function RouteComponent() {
               </div>
               <div className="text-left">
                 <p className="text-[13px]">{product.name}</p>
-                <span className="text-xs ml-3 opacity-55">{product.price}</span>
+                <span className="text-xs opacity-55">{product.price}</span>
               </div>
             </Link>
           </div>
