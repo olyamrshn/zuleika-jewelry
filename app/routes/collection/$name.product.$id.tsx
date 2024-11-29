@@ -50,8 +50,8 @@ function ProductComponent() {
   const getTabTitle = () => tabs.find((tab) => tab.id === activeTab)?.label
 
   return (
-    <div className="flex flex-col lg:flex-row gap-3 w-[95%] justify-center mx-auto items-center">
-      <div className="w-full lg:w-1/2 lg:mr-5 flex justify-center">
+    <div className="flex flex-col lg:flex-row px-4 w-[95%] mx-auto">
+      <div className="w-full lg:w-1/2 lg:mr-5">
         <img
           src={product.image}
           alt={product.name}
@@ -103,26 +103,28 @@ function ProductComponent() {
               <React.Fragment key={index}>
                 <button
                   onClick={() => setActiveTab(leftId as typeof activeTab)}
-                  className="group relative text-left inline-block"
+                  className="group relative text-left lg:text-left inline-block w-full"
                 >
                   <p
                     className={`${
-                      activeTab === leftId ? "" : "opacity-50 hover:opacity-100"
+                      activeTab === leftId
+                        ? ""
+                        : "opacity-50 inline-block hover:opacity-100"
                     } transition-opacity duration-300 whitespace-nowrap inline-block w-max`}
                   >
                     {tabs.find((t) => t.id === leftId)!.label}
                   </p>
-                  <span
-                    className={`absolute left-0 -bottom-0.5 h-[1px] bg-current transform transition-transform origin-center ${
+                  {/* <span
+                    className={`absolute left-0 -bottom-0.5 h-[1px] bg-current transform transition-transform origin-left ${
                       activeTab === leftId
-                        ? "w-[100%] scale-x-100"
-                        : "w-[100%] scale-x-0 group-hover:scale-x-100 transition-transform duration-200"
+                        ? "w-full scale-x-100"
+                        : "w-full scale-x-0 group-hover:scale-x-100 transition-transform duration-200"
                     }`}
-                  />
+                  /> */}
                 </button>
                 <button
                   onClick={() => setActiveTab(rightId as typeof activeTab)}
-                  className="group relative text-right inline-block ml-auto"
+                  className="group relative text-left lg:text-right inline-block w-full lg:ml-auto"
                 >
                   <p
                     className={`${
@@ -133,13 +135,13 @@ function ProductComponent() {
                   >
                     {tabs.find((t) => t.id === rightId)!.label}
                   </p>
-                  <span
+                  {/* <span
                     className={`absolute right-0 -bottom-0.5 h-[1px] bg-current transform transition-transform origin-center ${
                       activeTab === rightId
                         ? "w-[100%] scale-x-100"
                         : "w-[100%] scale-x-0 group-hover:scale-x-100 transition-transform duration-200"
                     }`}
-                  />
+                  /> */}
                 </button>
               </React.Fragment>
             ))}

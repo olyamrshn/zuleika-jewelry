@@ -20,7 +20,7 @@ function RouteComponent() {
   }
 
   return (
-    <div className="p-4 text-center h-auto">
+    <div className="text-center">
       {!isProductRoute && (
         <h1 className="text-lg font-semibold mb-4">{name.toUpperCase()}</h1>
       )}
