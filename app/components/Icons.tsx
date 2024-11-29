@@ -25,13 +25,13 @@ export function HeartIcon() {
   return (
     <svg width="18" height="18" fill="none" viewBox="0 0 24 24">
       <path
-        fill-rule="evenodd"
+        fillRule="evenodd"
         stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
         d="M11.995 7.23319C10.5455 5.60999 8.12832 5.17335 6.31215 6.65972C4.49599 8.14609 4.2403 10.6312 5.66654 12.3892L11.995 18.25L18.3235 12.3892C19.7498 10.6312 19.5253 8.13046 17.6779 6.65972C15.8305 5.18899 13.4446 5.60999 11.995 7.23319Z"
-        clip-rule="evenodd"
+        clipRule="evenodd"
       ></path>
     </svg>
   )
@@ -51,31 +51,38 @@ export function SearchIcon() {
   )
 }
 
-export function BagIcon() {
+export function BagIcon({ count }: { count?: number }) {
   return (
-    <svg width="18" height="18" fill="none" viewBox="0 0 24 24">
-      <path
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.5"
-        d="M16.5843 17.662L18.25 9.75H5.75L7.41569 17.662C7.61053 18.5875 8.42701 19.25 9.37279 19.25H14.6272C15.573 19.25 16.3895 18.5875 16.5843 17.662Z"
-      ></path>
-      <path
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.5"
-        d="M8.75 9.5V7.75C8.75 6.09315 10.0931 4.75 11.75 4.75H12.25C13.9069 4.75 15.25 6.09315 15.25 7.75V9.5"
-      ></path>
-      <path
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.5"
-        d="M19.25 9.75H4.75"
-      ></path>
-    </svg>
+    <div className="relative">
+      <svg width="18" height="18" fill="none" viewBox="0 0 24 24">
+        <path
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="1.5"
+          d="M16.5843 17.662L18.25 9.75H5.75L7.41569 17.662C7.61053 18.5875 8.42701 19.25 9.37279 19.25H14.6272C15.573 19.25 16.3895 18.5875 16.5843 17.662Z"
+        ></path>
+        <path
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="1.5"
+          d="M8.75 9.5V7.75C8.75 6.09315 10.0931 4.75 11.75 4.75H12.25C13.9069 4.75 15.25 6.09315 15.25 7.75V9.5"
+        ></path>
+        <path
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="1.5"
+          d="M19.25 9.75H4.75"
+        ></path>
+      </svg>
+      {count && count > 0 ? (
+        <span className="absolute -top-2 -right-2 zuleika-bg text-white text-xs w-4 h-4 rounded-full flex items-center justify-center">
+          {count}
+        </span>
+      ) : null}
+    </div>
   )
 }
 
@@ -90,9 +97,9 @@ export function ArrowIcon() {
       <path
         d="M10 4L6 8L10 12"
         stroke="black"
-        stroke-width="2"
-        stroke-linecap="square"
-        stroke-linejoin="miter"
+        strokeWidth="2"
+        strokeLinecap="square"
+        strokeLinejoin="miter"
         fill="none"
       />
     </svg>

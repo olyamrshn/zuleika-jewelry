@@ -1,10 +1,12 @@
 import { Link, useLocation } from "@tanstack/react-router"
 import { SearchIcon, UserIcon, HeartIcon, BagIcon, ArrowIcon } from "./Icons"
+import { useCart } from "~/context/CartContext"
 
 export default function Nav() {
   const location = useLocation()
   const isJewelleryRoute = location.pathname === "/jewellery"
   const isAboutRoute = location.pathname === "/about"
+  const { cartCount } = useCart()
 
   if (isAboutRoute) {
     return (
@@ -115,7 +117,7 @@ export default function Nav() {
               <HeartIcon />
             </button>
             <button className="hover:scale-110 transition-transform">
-              <BagIcon />
+              <BagIcon count={cartCount} />
             </button>
           </div>
         </div>
@@ -139,7 +141,7 @@ export default function Nav() {
                 <HeartIcon />
               </button>
               <button className="hover:scale-110 transition-transform">
-                <BagIcon />
+                <BagIcon count={cartCount} />
               </button>
             </div>
           </div>
@@ -202,7 +204,7 @@ export default function Nav() {
                 <HeartIcon />
               </button>
               <button className="hover:scale-110 transition-transform">
-                <BagIcon />
+                <BagIcon count={cartCount} />
               </button>
             </div>
           </div>

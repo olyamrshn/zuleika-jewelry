@@ -15,6 +15,7 @@ import appCss from "~/styles/app.css?url"
 import { seo } from "~/utils/seo"
 import Nav from "~/components/Nav"
 import Footer from "~/components/Footer"
+import { CartProvider } from "~/context/CartContext"
 
 export const Route = createRootRouteWithContext<{
   queryClient: QueryClient
@@ -63,16 +64,18 @@ export const Route = createRootRouteWithContext<{
     )
   },
   notFoundComponent: () => <NotFound />,
-  component: RootComponent,
+  component: () => {
+    return (
+      <RootDocument>
+        <CartProvider>
+          <Nav />
+          <Outlet />
+          <Footer />
+        </CartProvider>
+      </RootDocument>
+    )
+  },
 })
-
-function RootComponent() {
-  return (
-    <RootDocument>
-      <Outlet />
-    </RootDocument>
-  )
-}
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
@@ -81,11 +84,11 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <Meta />
       </Head>
       <Body>
-        <Nav />
-        {children}
-        <ScrollRestoration />
-        <Scripts />
-        <Footer />
+        <CartProvider>
+          {children}
+          <ScrollRestoration />
+          <Scripts />
+        </CartProvider>
       </Body>
     </Html>
   )

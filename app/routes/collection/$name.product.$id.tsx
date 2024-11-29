@@ -1,8 +1,10 @@
+import React from "react"
 import { createFileRoute } from "@tanstack/react-router"
 import { type CollectionName } from "~/data/collections"
 import { products, type Product } from "~/data/products"
 import { NotFound } from "~/components/NotFound"
 import { useState } from "react"
+import { useCart } from "~/context/CartContext"
 
 function ProductComponent() {
   const { name, id } = Route.useParams()
@@ -10,6 +12,7 @@ function ProductComponent() {
     "description" | "about" | "savoir" | "needAssistance" | "shipping" | "care"
   >("description")
   const [isAdded, setIsAdded] = useState(false)
+  const { addToBag, removeFromBag } = useCart()
 
   if (!name) {
     return <NotFound />
@@ -76,9 +79,16 @@ function ProductComponent() {
           </div>
 
           <button
-            onClick={() => setIsAdded(!isAdded)}
+            onClick={() => {
+              setIsAdded(!isAdded)
+              if (!isAdded) {
+                addToBag()
+              } else {
+                removeFromBag()
+              }
+            }}
             className={`w-full text-xs my-3 p-2 py-3 border-2 border-black bg-inherit hover:bg-amber-400/10 transition-colors duration-300 rounded-none text-center ${
-              isAdded ? "bg-amber-400/10" : ""
+              isAdded ? "bg-amber-400/15" : ""
             }`}
           >
             {isAdded ? "Added to bag" : "Add to bag"}
@@ -89,8 +99,8 @@ function ProductComponent() {
               ["description", "needAssistance"],
               ["about", "shipping"],
               ["savoir", "care"],
-            ].map(([leftId, rightId]) => (
-              <>
+            ].map(([leftId, rightId], index) => (
+              <React.Fragment key={index}>
                 {[leftId, rightId].map((id) => {
                   const tab = tabs.find((t) => t.id === id)!
                   return (
@@ -116,7 +126,7 @@ function ProductComponent() {
                     </button>
                   )
                 })}
-              </>
+              </React.Fragment>
             ))}
           </div>
         </div>

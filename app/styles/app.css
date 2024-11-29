@@ -14,8 +14,13 @@
     outline: none !important;
   }
 
-  .zuleika-text-color {
-    color: rgb(190, 59, 37)
+
+.zuleika-text-color {
+    color: rgb(190, 59, 37);
+  }
+
+  .zuleika-bg {
+    background-color: rgb(190, 59, 37);
   }
 
 }
