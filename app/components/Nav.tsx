@@ -95,7 +95,7 @@ export default function Nav() {
           </div>
 
           <div className="flex flex-row mx-auto items-center gap-4 sm:gap-5 order-1 sm:order-2">
-            <Link to="/" className="text-sm sm:mb-1">
+            <Link to="/" className="text-xs md:text-sm sm:mb-1">
               E-STORE
             </Link>
             <Link
@@ -104,7 +104,7 @@ export default function Nav() {
             >
               ZULEIKA
             </Link>
-            <Link to="/atelier" className="text-sm sm:mb-1">
+            <Link to="/atelier" className="text-xs md:text-sm sm:mb-1">
               ATELIER
             </Link>
           </div>

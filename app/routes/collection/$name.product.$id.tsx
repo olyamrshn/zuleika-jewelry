@@ -50,8 +50,8 @@ function ProductComponent() {
   const getTabTitle = () => tabs.find((tab) => tab.id === activeTab)?.label
 
   return (
-    <div className="flex flex-col lg:flex-row gap-3 w-[95%] justify-center mx-auto">
-      <div className="w-full lg:w-1/2 lg:mr-5">
+    <div className="flex flex-col lg:flex-row gap-3 w-[95%] justify-center mx-auto items-center">
+      <div className="w-full lg:w-1/2 lg:mr-5 flex justify-center">
         <img
           src={product.image}
           alt={product.name}
@@ -59,7 +59,7 @@ function ProductComponent() {
         />
       </div>
 
-      <div className="w-full space-y-8 lg:w-1/4 md:mr-10 text-left">
+      <div className="w-full space-y-8 lg:w-1/4 md:mr-10 text-left self-center">
         <div className="flex flex-col gap-8 items-start">
           <h1 className="text-md font-semibold">{product.name}</h1>
           <p className="text-xs opacity-55">{product.price}</p>
@@ -147,7 +147,7 @@ function ProductComponent() {
         </div>
       </div>
 
-      <div className="w-full lg:w-1/4 space-y-6 text-left">
+      <div className="w-full lg:w-1/4 space-y-6 text-left self-center">
         <div className="mt-4">
           <h2 className="text-xs mb-6 font-medium">{getTabTitle()}</h2>
           <p className="text-xs opacity-50 leading-relaxed">
