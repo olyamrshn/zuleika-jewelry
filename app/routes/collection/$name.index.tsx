@@ -39,7 +39,7 @@ function RouteComponent() {
                   />
                 )}
               </div>
-              <div className="text-left">
+              <div className="text-center md:text-left w-[85%] mx-auto">
                 <p className="text-[13px]">{product.name}</p>
                 <span className="text-xs opacity-55">{product.price}</span>
               </div>

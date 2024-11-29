@@ -1,10 +1,18 @@
 import { Link, useLocation } from "@tanstack/react-router"
-import { SearchIcon, UserIcon, HeartIcon, BagIcon, ArrowIcon } from "./Icons"
+import {
+  SearchIcon,
+  UserIcon,
+  HeartIcon,
+  BagIcon,
+  ArrowIcon,
+  MenuIcon,
+} from "./Icons"
 import { useCart } from "~/context/CartContext"
 
 export default function Nav() {
   const location = useLocation()
   const isJewelleryRoute = location.pathname === "/jewellery"
+  const isCollectionRoute = location.pathname.startsWith("/collection/")
   const isAboutRoute = location.pathname === "/about"
   const { cartCount } = useCart()
 
@@ -68,16 +76,25 @@ export default function Nav() {
 
   return (
     <div className="zuleika-text-color">
-      {isJewelleryRoute ? (
+      {isJewelleryRoute || isCollectionRoute ? (
         <div className="flex flex-col p-4 sm:flex-row justify-between font-kepler">
-          <div className="flex items-center justify-between mb-6 sm:hidden">
+          <div className="flex items-center justify-between mb-6">
             <Link to="/" className="flex items-center gap-2">
               <ArrowIcon />
-              <span className="text-sm text-black font-termina">JEWELLERY</span>
+              <span className="text-sm text-black font-termina">
+                {isJewelleryRoute ? (
+                  "JEWELLERY"
+                ) : (
+                  <div className="flex items-center gap-2">
+                    <MenuIcon />
+                    <p>MENU</p>
+                  </div>
+                )}
+              </span>
             </Link>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-5 order-1 sm:order-2">
+          <div className="flex flex-row mx-auto items-center gap-4 sm:gap-5 order-1 sm:order-2">
             <Link to="/" className="text-sm sm:mb-1">
               E-STORE
             </Link>
@@ -90,20 +107,6 @@ export default function Nav() {
             <Link to="/atelier" className="text-sm sm:mb-1">
               ATELIER
             </Link>
-          </div>
-
-          <div className="hidden sm:flex flex-row justify-between items-center mt-4 sm:mt-0 order-2 sm:order-1">
-            <div className="flex">
-              <Link
-                to="/"
-                className="flex flex-row gap-10 items-center text-black"
-              >
-                <ArrowIcon />
-                <span className="text-black font-[400] text-sm font-termina">
-                  JEWELLERY
-                </span>
-              </Link>
-            </div>
           </div>
 
           <div className="flex zuleika-text-color space-x-4 justify-center mt-6 sm:mt-0 order-2 sm:order-3">

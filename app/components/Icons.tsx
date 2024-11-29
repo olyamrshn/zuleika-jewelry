@@ -105,3 +105,38 @@ export function ArrowIcon() {
     </svg>
   )
 }
+
+export function MenuIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 100 60"
+      className="zuleika-text-color"
+    >
+      <line
+        x1="10"
+        y1="15"
+        x2="60"
+        y2="15"
+        stroke="currentColor"
+        strokeWidth="4"
+      />
+      <line
+        x1="10"
+        y1="30"
+        x2="90"
+        y2="30"
+        stroke="currentColor"
+        strokeWidth="4"
+      />
+      <line
+        x1="10"
+        y1="45"
+        x2="90"
+        y2="45"
+        stroke="currentColor"
+        strokeWidth="4"
+      />
+    </svg>
+  )
+}
