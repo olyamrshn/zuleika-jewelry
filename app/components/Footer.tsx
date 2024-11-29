@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="zuleika-text-color mt-10 font-termina py-8 px-4 sm:px-10">
+    <footer className="zuleika-text-color font-termina py-8 px-4 sm:px-10">
       <div className="flex flex-col sm:flex-row justify-between">
         <div className="mb-4 sm:mb-0">
           <h3 className="text-sm mb-2">Customer Care</h3>

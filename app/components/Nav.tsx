@@ -1,6 +1,5 @@
 import { Link, useLocation } from "@tanstack/react-router"
 import { SearchIcon, UserIcon, HeartIcon, BagIcon, ArrowIcon } from "./Icons"
-import { SlArrowLeft } from "react-icons/sl"
 
 export default function Nav() {
   const location = useLocation()

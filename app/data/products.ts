@@ -16,6 +16,7 @@ export interface Product {
     fullDescription: string
     aboutCollection: string
     savoirFaire: string
+    needAssistance: string
     shipping: string
     careAdvice: string
   }
@@ -43,6 +44,7 @@ export const products: Record<CollectionName, Product[]> = {
           "The Eden collection represents nature's perfect harmony",
         savoirFaire:
           "We use a technique called granulation, where we create a pattern by melting gold and then cooling it to create a sphere. This is a very delicate process that requires a lot of skill and patience.",
+        needAssistance: "",
         shipping:
           "We offer free shipping on all orders over $500. For orders under $500, shipping is $50.",
         careAdvice:
@@ -69,6 +71,7 @@ export const products: Record<CollectionName, Product[]> = {
           "The Eden collection represents nature's perfect harmony...",
         savoirFaire:
           "For this ring, we use a technique called granulation, where we create a pattern by melting gold and then cooling it to create a sphere. This is a very delicate process that requires a lot of skill and patience.",
+        needAssistance: "",
         shipping:
           "We offer free shipping on all orders over $500. For orders under $500, shipping is $50.",
         careAdvice:
@@ -98,6 +101,7 @@ export const products: Record<CollectionName, Product[]> = {
           "The Niloufer collection represents nature's perfect harmony...",
         savoirFaire:
           "We use a technique called granulation, where we create a pattern by melting gold and then cooling it to create a sphere. This is a very delicate process that requires a lot of skill and patience.",
+        needAssistance: "",
         shipping:
           "We offer free shipping on all orders over $500. For orders under $500, shipping is $50.",
         careAdvice:
@@ -124,6 +128,7 @@ export const products: Record<CollectionName, Product[]> = {
           "The Niloufer collection represents nature's perfect harmony...",
         savoirFaire:
           "We use a technique called granulation, where we create a pattern by melting gold and then cooling it to create a sphere. This is a very delicate process that requires a lot of skill and patience.",
+        needAssistance: "",
         shipping:
           "We offer free shipping on all orders over $500. For orders under $500, shipping is $50.",
         careAdvice:
@@ -152,6 +157,7 @@ export const products: Record<CollectionName, Product[]> = {
           "The Poem collection represents nature's perfect harmony...",
         savoirFaire:
           "We use a technique called granulation, where we create a pattern by melting gold and then cooling it to create a sphere. This is a very delicate process that requires a lot of skill and patience.",
+        needAssistance: "",
         shipping:
           "We offer free shipping on all orders over $500. For orders under $500, shipping is $50.",
         careAdvice:
@@ -178,6 +184,7 @@ export const products: Record<CollectionName, Product[]> = {
           "The Poem collection represents nature's perfect harmony...",
         savoirFaire:
           "We use a technique called granulation, where we create a pattern by melting gold and then cooling it to create a sphere. This is a very delicate process that requires a lot of skill and patience.",
+        needAssistance: "",
         shipping:
           "We offer free shipping on all orders over $500. For orders under $500, shipping is $50.",
         careAdvice:

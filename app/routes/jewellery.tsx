@@ -91,7 +91,7 @@ export const Route = createFileRoute("/jewellery")({
       <img
         src="https://images.omrshn.dev/estore.png"
         alt="estore"
-        className="w-full h-[60vh] md:h-auto md:flex-1 md:max-h-[800px] object-cover"
+        className="w-full md:w-[80%] md:h-auto md:flex-1 md:max-h-auto object-cover"
       />
     </div>
   ),
