@@ -89,8 +89,8 @@ export default function Nav() {
   return (
     <div className="fixed top-0 left-0 right-0 bg-white z-50 zuleika-text-color">
       {isJewelleryRoute || isCollectionRoute ? (
-        <div className="flex flex-col p-4 sm:flex-row justify-between font-kepler">
-          <div className="flex items-center justify-between mb-6">
+        <div className="flex flex-col p-4 sm:flex-row justify-between items-center font-kepler">
+          <div className="w-[120px] flex items-center justify-start">
             <>
               {isJewelleryRoute ? (
                 <Link to="/" className="text-black flex items-center gap-2">
@@ -109,34 +109,34 @@ export default function Nav() {
             </>
           </div>
 
-          <div className="flex flex-row mx-auto items-center gap-4 sm:gap-5 order-1 sm:order-2">
+          <div className="flex-1 flex flex-row items-center justify-center">
             {showFullNav && (
               <Link
                 to="/"
-                className="text-xs md:text-sm sm:mb-1 transition-opacity duration-300"
+                className="text-xs md:text-sm transition-opacity duration-300"
               >
                 E-STORE
               </Link>
             )}
             <Link
               to="/"
-              className={`text-2xl tracking-[0.2em] transform scale-y-150 transition-all duration-300 ${
-                !showFullNav ? "scale-150" : ""
-              }`}
+              className={`text-center mx-4 ${
+                !showFullNav ? "text-3xl" : "text-4xl"
+              } tracking-[0.2em] transition-all duration-300`}
             >
               ZULEIKA
             </Link>
             {showFullNav && (
               <Link
                 to="/atelier"
-                className="text-xs md:text-sm sm:mb-1 transition-opacity duration-300"
+                className="text-xs md:text-sm transition-opacity duration-300"
               >
                 ATELIER
               </Link>
             )}
           </div>
 
-          <div className="flex zuleika-text-color space-x-4 justify-center mt-6 sm:mt-0 order-2 sm:order-3">
+          <div className="w-[120px] flex justify-end space-x-4">
             <button className="hover:scale-110 transition-transform">
               <SearchIcon />
             </button>

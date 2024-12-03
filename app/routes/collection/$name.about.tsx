@@ -11,9 +11,9 @@ function RouteComponent() {
   }
 
   return (
-    <div className="p-4 text-center h-auto">
+    <div className="text-center mx-auto h-auto">
       <CollectionNav collectionName={name} />
-      <div className="max-w-2 xl mx-auto mt-8">
+      <div className="max-w-2xl mx-auto mt-8">
         <p className="text-left">{collection.about.description}</p>
       </div>
     </div>
