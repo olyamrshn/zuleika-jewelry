@@ -93,6 +93,7 @@ export function ArrowIcon() {
       height="16"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 16 16"
+      className="zuleika-text-color"
     >
       <path
         d="M10 4L6 8L10 12"
@@ -110,33 +111,14 @@ export function MenuIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 100 60"
-      className="zuleika-text-color"
+      x="0px"
+      y="0px"
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
     >
-      <line
-        x1="10"
-        y1="15"
-        x2="60"
-        y2="15"
-        stroke="currentColor"
-        strokeWidth="4"
-      />
-      <line
-        x1="10"
-        y1="30"
-        x2="90"
-        y2="30"
-        stroke="currentColor"
-        strokeWidth="4"
-      />
-      <line
-        x1="10"
-        y1="45"
-        x2="90"
-        y2="45"
-        stroke="currentColor"
-        strokeWidth="4"
-      />
+      <path d="M 3.75 3 A 0.750075 0.750075 0 1 0 3.75 4.5 L 20.25 4.5 A 0.750075 0.750075 0 1 0 20.25 3 L 3.75 3 z M 3.75 11 A 0.750075 0.750075 0 1 0 3.75 12.5 L 20.25 12.5 A 0.750075 0.750075 0 1 0 20.25 11 L 3.75 11 z M 3.75 18.5 A 0.750075 0.750075 0 1 0 3.75 20 L 20.25 20 A 0.750075 0.750075 0 1 0 20.25 18.5 L 3.75 18.5 z"></path>
     </svg>
   )
 }

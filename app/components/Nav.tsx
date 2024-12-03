@@ -8,6 +8,7 @@ import {
   MenuIcon,
 } from "./Icons"
 import { useCart } from "~/context/CartContext"
+import { useEffect, useState } from "react"
 
 export default function Nav() {
   const location = useLocation()
@@ -15,10 +16,21 @@ export default function Nav() {
   const isCollectionRoute = location.pathname.startsWith("/collection/")
   const isAboutRoute = location.pathname === "/about"
   const { cartCount } = useCart()
+  const [showFullNav, setShowFullNav] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY
+      setShowFullNav(scrollPosition > 100)
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   if (isAboutRoute) {
     return (
-      <nav className="flex flex-col lg:flex-row items-center p-4 px-5 zuleika-text-color font-kepler">
+      <nav className="fixed top-0 left-0 right-0 bg-white z-50 flex flex-col lg:flex-row items-center p-4 px-5 zuleika-text-color font-kepler">
         <div className="flex justify-between lg:justify-start w-full lg:mb-4 order-1 lg:order-none">
           <div className="flex space-x-4">
             <a href="#">FR</a>
@@ -34,29 +46,29 @@ export default function Nav() {
           <Link to="/" className="text-5xl lg:text-[100px] mb-4 lg:mb-0">
             ZULEIKA
           </Link>
-          <div className="flex flex-col sm:flex-row justify-center items-center text-sm gap-4 sm:gap-8 md:gap-10">
-            <Link to="/jewellery" className="group">
+          <div className="flex flex-row justify-center items-center text-sm gap-4 sm:gap-8 md:gap-10 overflow-x-auto">
+            <Link to="/jewellery" className="group whitespace-nowrap">
               <span className="relative inline-block">
                 JEWELLERY
                 <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
               </span>
             </Link>
 
-            <Link to="/bijoux-despace" className="group">
+            <Link to="/bijoux-despace" className="group whitespace-nowrap">
               <span className="relative inline-block">
                 BIJOUX&nbsp;D'ESPACE
                 <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
               </span>
             </Link>
 
-            <Link to="/about" className="group">
+            <Link to="/about" className="group whitespace-nowrap">
               <span className="relative inline-block">
                 ABOUT
                 <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
               </span>
             </Link>
 
-            <Link to="/contact" className="group">
+            <Link to="/contact" className="group whitespace-nowrap">
               <span className="relative inline-block">
                 CONTACT
                 <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
@@ -75,38 +87,53 @@ export default function Nav() {
   }
 
   return (
-    <div className="zuleika-text-color">
+    <div className="fixed top-0 left-0 right-0 bg-white z-50 zuleika-text-color">
       {isJewelleryRoute || isCollectionRoute ? (
         <div className="flex flex-col p-4 sm:flex-row justify-between font-kepler">
           <div className="flex items-center justify-between mb-6">
-            <Link to="/" className="flex items-center gap-2">
-              <ArrowIcon />
-              <span className="text-sm text-black font-termina">
-                {isJewelleryRoute ? (
-                  "JEWELLERY"
-                ) : (
-                  <div className="flex items-center gap-2">
-                    <MenuIcon />
-                    <p>MENU</p>
-                  </div>
-                )}
-              </span>
-            </Link>
+            <>
+              {isJewelleryRoute ? (
+                <Link to="/" className="text-black flex items-center gap-2">
+                  <ArrowIcon />
+                  <span className="text-sm font-termina">JEWELLERY</span>
+                </Link>
+              ) : (
+                <Link
+                  to="/jewellery"
+                  className="zuleika-text-color flex items-center gap-2"
+                >
+                  <MenuIcon />
+                  <span className="text-xs font-termina">MENU</span>
+                </Link>
+              )}
+            </>
           </div>
 
           <div className="flex flex-row mx-auto items-center gap-4 sm:gap-5 order-1 sm:order-2">
-            <Link to="/" className="text-xs md:text-sm sm:mb-1">
-              E-STORE
-            </Link>
+            {showFullNav && (
+              <Link
+                to="/"
+                className="text-xs md:text-sm sm:mb-1 transition-opacity duration-300"
+              >
+                E-STORE
+              </Link>
+            )}
             <Link
               to="/"
-              className="text-2xl tracking-[0.2em] transform scale-y-150"
+              className={`text-2xl tracking-[0.2em] transform scale-y-150 transition-all duration-300 ${
+                !showFullNav ? "scale-150" : ""
+              }`}
             >
               ZULEIKA
             </Link>
-            <Link to="/atelier" className="text-xs md:text-sm sm:mb-1">
-              ATELIER
-            </Link>
+            {showFullNav && (
+              <Link
+                to="/atelier"
+                className="text-xs md:text-sm sm:mb-1 transition-opacity duration-300"
+              >
+                ATELIER
+              </Link>
+            )}
           </div>
 
           <div className="flex zuleika-text-color space-x-4 justify-center mt-6 sm:mt-0 order-2 sm:order-3">
@@ -125,7 +152,7 @@ export default function Nav() {
           </div>
         </div>
       ) : (
-        <nav className="flex flex-col lg:flex-row items-end p-4 px-5 zuleika-text-color font-kepler">
+        <nav className="fixed top-0 left-0 right-0 bg-white z-50 flex flex-col lg:flex-row items-end p-4 px-5 zuleika-text-color font-kepler">
           <div className="flex justify-between lg:justify-start w-full lg:mb-4 order-1 lg:order-none">
             <div className="flex space-x-4">
               <a href="#">FR</a>

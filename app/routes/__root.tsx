@@ -16,6 +16,7 @@ import { seo } from "~/utils/seo"
 import Nav from "~/components/Nav"
 import Footer from "~/components/Footer"
 import { CartProvider } from "~/context/CartContext"
+import { useLocation } from "@tanstack/react-router"
 
 export const Route = createRootRouteWithContext<{
   queryClient: QueryClient
@@ -69,7 +70,9 @@ export const Route = createRootRouteWithContext<{
       <RootDocument>
         <CartProvider>
           <Nav />
-          <Outlet />
+          <div className="mt-[10em] md:mt-[6em]">
+            <Outlet />
+          </div>
           <Footer />
         </CartProvider>
       </RootDocument>
