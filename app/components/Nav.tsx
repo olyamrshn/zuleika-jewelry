@@ -43,7 +43,12 @@ export default function Nav() {
         </div>
 
         <div className="text-center flex flex-col w-full lg:w-auto font-keplerCondensed order-0 lg:order-none mb-4 lg:mb-0">
-          <Link to="/" className="text-5xl lg:text-[100px] mb-4 lg:mb-0">
+          <Link
+            to="/"
+            className={`${
+              showFullNav ? "text-3xl md:text-5xl" : "text-5xl md:text-[100px]"
+            } mb-4 lg:mb-0 transition-all duration-900 ease-in-out`}
+          >
             ZULEIKA
           </Link>
           <div className="flex flex-row py-2 justify-center items-center text-xs md:text-sm gap-4 overflow-hidden md:gap-8 lg:gap-10 overflow-x-auto">
