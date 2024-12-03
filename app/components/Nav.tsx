@@ -46,11 +46,11 @@ export default function Nav() {
           <Link to="/" className="text-5xl lg:text-[100px] mb-4 lg:mb-0">
             ZULEIKA
           </Link>
-          <div className="flex flex-row justify-center items-center text-xs md:text-sm gap-4 overflow-hidden md:gap-8 lg:gap-10 overflow-x-auto">
+          <div className="flex flex-row py-2 justify-center items-center text-xs md:text-sm gap-4 overflow-hidden md:gap-8 lg:gap-10 overflow-x-auto">
             <Link to="/jewellery" className="group whitespace-nowrap">
               <span className="relative inline-block">
                 JEWELLERY
-                <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+                <span className="absolute bg-current left-0 -bottom-0.5 w-full h-px transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out z-10"></span>
               </span>
             </Link>
 
@@ -93,7 +93,10 @@ export default function Nav() {
           <div className="w-[120px] mr-auto pb-2 md:pb-0 md:mr-0 flex items-center justify-start sm:absolute sm:left-4 sm:top-4">
             <>
               {isJewelleryRoute ? (
-                <Link to="/" className="text-black flex items-center gap-2">
+                <Link
+                  to="/"
+                  className="text-black flex items-center gap-2 md:gap-[3em]"
+                >
                   <ArrowIcon />
                   <span className="text-sm font-termina">JEWELLERY</span>
                 </Link>
@@ -113,12 +116,18 @@ export default function Nav() {
             {showFullNav ? (
               <>
                 <div className="hidden md:flex flex-row items-center gap-4">
-                  <Link to="/jewellery" className="text-xs md:text-sm">
-                    JEWELLERY
+                  <Link to="/jewellery" className="text-xs md:text-sm group">
+                    <span className="relative inline-block">
+                      JEWELLERY
+                      <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+                    </span>
                   </Link>
                   <span>-</span>
-                  <Link to="/" className="text-xs md:text-sm">
-                    E-STORE
+                  <Link to="/" className="text-xs md:text-sm group">
+                    <span className="relative inline-block">
+                      E-STORE
+                      <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+                    </span>
                   </Link>
                   <Link
                     to="/"
@@ -126,26 +135,44 @@ export default function Nav() {
                   >
                     ZULEIKA
                   </Link>
-                  <Link to="/atelier" className="text-xs md:text-sm">
-                    ATELIER
+                  <Link to="/atelier" className="text-xs md:text-sm group">
+                    <span className="relative inline-block">
+                      ATELIER
+                      <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+                    </span>
                   </Link>
                   <span>-</span>
-                  <Link to="/bijoux-despace" className="text-xs md:text-sm">
-                    BIJOUX D'ESPACE
+                  <Link
+                    to="/bijoux-despace"
+                    className="text-xs md:text-sm group"
+                  >
+                    <span className="relative inline-block">
+                      BIJOUX D'ESPACE
+                      <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+                    </span>
                   </Link>
-                  <Link to="/about" className="text-xs md:text-sm">
-                    ABOUT
+                  <Link to="/about" className="text-xs md:text-sm group">
+                    <span className="relative inline-block">
+                      ABOUT
+                      <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+                    </span>
                   </Link>
-                  <Link to="/contact" className="text-xs md:text-sm">
-                    CONTACT
+                  <Link to="/contact" className="text-xs md:text-sm group">
+                    <span className="relative inline-block">
+                      CONTACT
+                      <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+                    </span>
                   </Link>
                 </div>
                 <div className="md:hidden flex items-center">
                   <Link
                     to="/"
-                    className="text-xs md:text-sm transition-opacity duration-300"
+                    className="text-xs md:text-sm transition-opacity duration-300 group"
                   >
-                    E-STORE
+                    <span className="relative inline-block">
+                      E-STORE
+                      <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+                    </span>
                   </Link>
                   <Link
                     to="/"
@@ -155,9 +182,12 @@ export default function Nav() {
                   </Link>
                   <Link
                     to="/atelier"
-                    className="text-xs md:text-sm transition-opacity duration-300"
+                    className="text-xs md:text-sm transition-opacity duration-300 group"
                   >
-                    ATELIER
+                    <span className="relative inline-block">
+                      ATELIER
+                      <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+                    </span>
                   </Link>
                 </div>
               </>
@@ -166,21 +196,27 @@ export default function Nav() {
                 <div className="hidden md:flex items-center">
                   <Link
                     to="/"
-                    className="text-xs md:text-sm transition-opacity duration-300"
+                    className="text-xs md:text-sm transition-opacity duration-300 group"
                   >
-                    E-STORE
+                    <span className="relative inline-block">
+                      E-STORE
+                      <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+                    </span>
                   </Link>
                   <Link
                     to="/"
-                    className="text-center mx-4 text-4xl tracking-[0.2em] transition-all duration-300"
+                    className="text-center mx-4 text-5xl tracking-[0.2em] transition-all duration-300"
                   >
                     ZULEIKA
                   </Link>
                   <Link
                     to="/atelier"
-                    className="text-xs md:text-sm transition-opacity duration-300"
+                    className="text-xs md:text-sm transition-opacity duration-300 group"
                   >
-                    ATELIER
+                    <span className="relative inline-block">
+                      ATELIER
+                      <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+                    </span>
                   </Link>
                 </div>
                 <div className="md:hidden">

@@ -31,7 +31,7 @@ const contentBlocks: ContentBlock[] = [
 ]
 export const Route = createFileRoute("/about")({
   component: () => (
-    <div className="text-[#848484] about-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-[#848484] about-container mx-auto">
       {contentBlocks.map((block, index) => (
         <div
           key={index}
@@ -44,7 +44,7 @@ export const Route = createFileRoute("/about")({
               className="w-full aspect-square object-cover"
             />
           </div>
-          <div className="text-content w-full md:w-1/2 md:pl-28 flex flex-col justify-center">
+          <div className="text-content w-full mx-auto flex flex-col justify-center">
             <h2 className="text-xl font-semibold mb-8">{block.title}</h2>
             <p className="text-xs leading-loose">{block.description}</p>
           </div>
