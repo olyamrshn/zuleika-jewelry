@@ -80,7 +80,7 @@ export const products: Record<CollectionName, Product[]> = {
       collection: "eden",
     },
     {
-      id: "eden-flora-necklace",
+      id: "eden-flora-necklace-2",
       name: "Eden Flora Necklace 40cm in yellow gold and pearls",
       price: "$1.000",
       image: "https://images.omrshn.dev/neck.jpeg",
@@ -107,7 +107,7 @@ export const products: Record<CollectionName, Product[]> = {
       collection: "eden",
     },
     {
-      id: "eden-stella-ring",
+      id: "eden-stella-ring-2",
       name: "Eden Stella Ring",
       price: "$1.000",
       image: "https://images.omrshn.dev/ears.jpg",
@@ -134,7 +134,7 @@ export const products: Record<CollectionName, Product[]> = {
       collection: "eden",
     },
     {
-      id: "eden-flora-necklace",
+      id: "eden-flora-necklace-3",
       name: "Eden Flora Necklace 40cm in yellow gold and pearls",
       price: "$1.000",
       image: "https://images.omrshn.dev/neck.jpeg",
@@ -161,7 +161,7 @@ export const products: Record<CollectionName, Product[]> = {
       collection: "eden",
     },
     {
-      id: "eden-stella-ring",
+      id: "eden-stella-ring-3",
       name: "Eden Stella Ring",
       price: "$1.000",
       image: "https://images.omrshn.dev/ears.jpg",
@@ -188,7 +188,7 @@ export const products: Record<CollectionName, Product[]> = {
       collection: "eden",
     },
     {
-      id: "eden-flora-necklace",
+      id: "eden-flora-necklace-4",
       name: "Eden Flora Necklace 40cm in yellow gold and pearls",
       price: "$1.000",
       image: "https://images.omrshn.dev/neck.jpeg",
@@ -215,7 +215,7 @@ export const products: Record<CollectionName, Product[]> = {
       collection: "eden",
     },
     {
-      id: "eden-stella-ring",
+      id: "eden-stella-ring-4",
       name: "Eden Stella Ring",
       price: "$1.000",
       image: "https://images.omrshn.dev/ears.jpg",
