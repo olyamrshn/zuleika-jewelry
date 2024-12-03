@@ -46,7 +46,7 @@ export default function Nav() {
           <Link to="/" className="text-5xl lg:text-[100px] mb-4 lg:mb-0">
             ZULEIKA
           </Link>
-          <div className="flex flex-row justify-center items-center text-sm gap-4 sm:gap-8 md:gap-10 overflow-x-auto">
+          <div className="flex flex-row justify-center items-center text-xs md:text-sm gap-4 overflow-hidden md:gap-8 lg:gap-10 overflow-x-auto">
             <Link to="/jewellery" className="group whitespace-nowrap">
               <span className="relative inline-block">
                 JEWELLERY
@@ -90,7 +90,7 @@ export default function Nav() {
     <div className="fixed top-0 left-0 right-0 bg-white z-50 zuleika-text-color">
       {isJewelleryRoute || isCollectionRoute ? (
         <div className="flex flex-col p-4 sm:flex-row justify-between items-center font-kepler">
-          <div className="w-[120px] flex items-center justify-start">
+          <div className="w-[120px] mr-auto pb-2 md:pb-0 md:mr-0 flex items-center justify-start sm:absolute sm:left-4 sm:top-4">
             <>
               {isJewelleryRoute ? (
                 <Link to="/" className="text-black flex items-center gap-2">
@@ -109,7 +109,7 @@ export default function Nav() {
             </>
           </div>
 
-          <div className="flex-1 flex flex-row items-center justify-center">
+          <div className="flex-1 flex flex-row items-center pb-2 md:pb-0 justify-center">
             {showFullNav && (
               <Link
                 to="/"
