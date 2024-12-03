@@ -109,34 +109,93 @@ export default function Nav() {
             </>
           </div>
 
-          <div className="flex-1 flex flex-row items-center pb-2 md:pb-0 justify-center">
-            {showFullNav && (
-              <Link
-                to="/"
-                className="text-xs md:text-sm transition-opacity duration-300"
-              >
-                E-STORE
-              </Link>
-            )}
-            <Link
-              to="/"
-              className={`text-center mx-4 ${
-                !showFullNav ? "text-3xl" : "text-4xl"
-              } tracking-[0.2em] transition-all duration-300`}
-            >
-              ZULEIKA
-            </Link>
-            {showFullNav && (
-              <Link
-                to="/atelier"
-                className="text-xs md:text-sm transition-opacity duration-300"
-              >
-                ATELIER
-              </Link>
+          <div className="flex-1 flex flex-row items-center pb-2 md:pb-0 justify-center mx-auto transition-all duration-300">
+            {showFullNav ? (
+              <>
+                <div className="hidden md:flex flex-row items-center gap-4">
+                  <Link to="/jewellery" className="text-xs md:text-sm">
+                    JEWELLERY
+                  </Link>
+                  <span>-</span>
+                  <Link to="/" className="text-xs md:text-sm">
+                    E-STORE
+                  </Link>
+                  <Link
+                    to="/"
+                    className="text-center mx-4 text-3xl tracking-[0.2em]"
+                  >
+                    ZULEIKA
+                  </Link>
+                  <Link to="/atelier" className="text-xs md:text-sm">
+                    ATELIER
+                  </Link>
+                  <span>-</span>
+                  <Link to="/bijoux-despace" className="text-xs md:text-sm">
+                    BIJOUX D'ESPACE
+                  </Link>
+                  <Link to="/about" className="text-xs md:text-sm">
+                    ABOUT
+                  </Link>
+                  <Link to="/contact" className="text-xs md:text-sm">
+                    CONTACT
+                  </Link>
+                </div>
+                <div className="md:hidden flex items-center">
+                  <Link
+                    to="/"
+                    className="text-xs md:text-sm transition-opacity duration-300"
+                  >
+                    E-STORE
+                  </Link>
+                  <Link
+                    to="/"
+                    className="text-center mx-4 text-4xl tracking-[0.2em] transition-all duration-300"
+                  >
+                    ZULEIKA
+                  </Link>
+                  <Link
+                    to="/atelier"
+                    className="text-xs md:text-sm transition-opacity duration-300"
+                  >
+                    ATELIER
+                  </Link>
+                </div>
+              </>
+            ) : (
+              <>
+                <div className="hidden md:flex items-center">
+                  <Link
+                    to="/"
+                    className="text-xs md:text-sm transition-opacity duration-300"
+                  >
+                    E-STORE
+                  </Link>
+                  <Link
+                    to="/"
+                    className="text-center mx-4 text-4xl tracking-[0.2em] transition-all duration-300"
+                  >
+                    ZULEIKA
+                  </Link>
+                  <Link
+                    to="/atelier"
+                    className="text-xs md:text-sm transition-opacity duration-300"
+                  >
+                    ATELIER
+                  </Link>
+                </div>
+                <div className="md:hidden">
+                  <Link
+                    to="/"
+                    className="text-center text-4xl tracking-[0.2em] transition-all duration-300"
+                  >
+                    ZULEIKA
+                  </Link>
+                </div>
+              </>
             )}
           </div>
 
-          <div className="w-[120px] flex justify-end space-x-4">
+          <div className="w-[120px] flex justify-end space-x-4 sm:absolute sm:right-4 sm:top-4">
             <button className="hover:scale-110 transition-transform">
               <SearchIcon />
             </button>
