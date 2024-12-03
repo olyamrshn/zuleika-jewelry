@@ -11,10 +11,10 @@ function RouteComponent() {
   }
 
   return (
-    <div className="text-center mx-auto h-auto">
+    <div className="text-center justify-center max-w-2xl mx-auto h-auto">
       <CollectionNav collectionName={name} />
-      <div className="max-w-2xl mx-auto mt-8">
-        <p className="text-left">{collection.about.description}</p>
+      <div className="mt-8">
+        <p>{collection.about.description}</p>
       </div>
     </div>
   )
