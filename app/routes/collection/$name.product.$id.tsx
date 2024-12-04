@@ -13,6 +13,7 @@ function ProductComponent() {
   >("description")
   const [isAdded, setIsAdded] = useState(false)
   const { addToBag, removeFromBag } = useCart()
+  const [currentImage, setCurrentImage] = useState(0)
 
   if (!name) {
     return <NotFound />
@@ -49,19 +50,81 @@ function ProductComponent() {
   const renderTabContent = () => tabContent[activeTab]
   const getTabTitle = () => tabs.find((tab) => tab.id === activeTab)?.label
 
+  const handleWheel = (e: React.WheelEvent) => {
+    e.stopPropagation()
+  }
+
+  const images = [
+    product.image,
+    ...(product.image2 ? [product.image2] : []),
+    ...(product.image3 ? [product.image3] : []),
+  ]
+
   return (
     <div className="flex flex-col lg:flex-row px-4 w-[95%] mx-auto">
-      <div className="w-full lg:w-1/2 lg:mr-5">
-        <img
-          src={product.image}
-          alt={product.name}
-          className="w-full h-auto object-contain"
-        />
+      <div className="w-full lg:w-1/2 lg:mr-5 relative">
+        <div
+          className="h-[400px] lg:h-[600px] overflow-x-auto lg:overflow-x-hidden lg:overflow-y-auto snap-x lg:snap-y snap-mandatory scrollbar-hide"
+          onWheel={handleWheel}
+          onScroll={(e) => {
+            const element = e.currentTarget
+            const index = Math.round(
+              window.innerWidth >= 1024
+                ? element.scrollTop / element.clientHeight
+                : element.scrollLeft / element.clientWidth,
+            )
+            setCurrentImage(index)
+          }}
+        >
+          <div className="flex lg:block w-max lg:w-full">
+            {images.map((image, index) => (
+              <div
+                key={`${image}-${index}`}
+                className="snap-start w-screen lg:w-full"
+              >
+                <img
+                  src={image}
+                  alt={`${product.name}${index > 0 ? ` - view ${index}` : ""}`}
+                  className="w-screen lg:w-full h-[400px] lg:h-[600px] object-cover"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 lg:left-4 lg:bottom-1/2 lg:translate-y-1/2 lg:flex-col">
+          {images.map((_, index) => (
+            <button
+              key={index}
+              className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
+                currentImage === index
+                  ? "bg-black scale-125"
+                  : "bg-black/30 hover:bg-black/50"
+              }`}
+              onClick={() => {
+                const container = document.querySelector(".overflow-x-auto")
+                if (container) {
+                  if (window.innerWidth >= 1024) {
+                    container.scrollTo({
+                      top: index * container.clientHeight,
+                      behavior: "smooth",
+                    })
+                  } else {
+                    container.scrollTo({
+                      left: index * container.clientWidth,
+                      behavior: "smooth",
+                    })
+                  }
+                }
+              }}
+            />
+          ))}
+        </div>
       </div>
 
       <div className="w-full space-y-8 lg:w-1/4 md:mr-10 text-left self-center">
-        <div className="flex flex-col gap-8 items-start">
-          <h1 className="text-md font-semibold">{product.name}</h1>
+        <div className="flex flex-col gap-4 md:gap-8 items-start">
+          <h1 className="text-md mt-4 md:mt-0 font-semibold">{product.name}</h1>
           <p className="text-xs opacity-55">{product.price}</p>
         </div>
 
