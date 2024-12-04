@@ -1,6 +1,7 @@
 interface About {
   title: string
-  description: string
+  description: string[]
+  image: string
 }
 
 interface Collection {
@@ -15,22 +16,42 @@ export const collections: Record<CollectionName, Collection> = {
     name: "Eden",
     about: {
       title: "EDEN Collection",
-      description: "The Eden collection represents nature's perfect harmony...",
+      description: [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+
+        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
+      ],
+      image: "https://images.omrshn.dev/collection.jpeg",
     },
   },
   niloufer: {
     name: "Niloufer",
     about: {
       title: "NILOUFER Collection",
-      description: "Inspired by Persian gardens and timeless elegance...",
+      description: [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+
+        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
+      ],
+      image: "https://images.omrshn.dev/neck.jpeg",
     },
   },
   "poem-bangles": {
     name: "Poem Bangles",
     about: {
       title: "POEM BANGLES Collection",
-      description:
-        "Each piece in the Poem Bangles collection tells a unique story...",
+      description: [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+
+        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
+      ],
+      image: "https://images.omrshn.dev/ring.jpg",
     },
   },
 }

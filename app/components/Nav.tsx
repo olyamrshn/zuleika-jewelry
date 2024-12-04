@@ -237,7 +237,7 @@ export default function Nav() {
             )}
           </div>
 
-          <div className="w-[120px] flex justify-end space-x-4 sm:absolute sm:right-4 sm:top-4">
+          <div className="w-[120px] flex justify-center space-x-1 sm:absolute sm:right-4 sm:top-4">
             <button className="hover:scale-110 transition-transform">
               <SearchIcon />
             </button>
@@ -261,7 +261,7 @@ export default function Nav() {
               <a href="#">EN</a>
             </div>
 
-            <div className="flex lg:hidden space-x-4 text-neutral-500">
+            <div className="flex lg:hidden space-x-2 text-neutral-500">
               <button className="hover:scale-110 transition-transform">
                 <SearchIcon />
               </button>
@@ -324,7 +324,7 @@ export default function Nav() {
           </div>
 
           <div className="hidden lg:flex justify-end w-full lg:mb-4 order-2 lg:order-none mt-4 lg:mt-0">
-            <div className="flex space-x-4 text-neutral-500">
+            <div className="flex space-x-1 text-neutral-500">
               <button className="hover:scale-110 transition-transform">
                 <SearchIcon />
               </button>
