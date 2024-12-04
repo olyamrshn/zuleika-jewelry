@@ -19,6 +19,7 @@ import { Route as AtelierImport } from './routes/atelier'
 import { Route as AboutImport } from './routes/about'
 import { Route as IndexImport } from './routes/index'
 import { Route as CollectionNameImport } from './routes/collection/$name'
+import { Route as CategoryNameImport } from './routes/category/$name'
 import { Route as CollectionNameIndexImport } from './routes/collection/$name.index'
 import { Route as CollectionNameAboutImport } from './routes/collection/$name.about'
 import { Route as CollectionNameProductIdImport } from './routes/collection/$name.product.$id'
@@ -62,6 +63,11 @@ const IndexRoute = IndexImport.update({
 
 const CollectionNameRoute = CollectionNameImport.update({
   path: '/collection/$name',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const CategoryNameRoute = CategoryNameImport.update({
+  path: '/category/$name',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -133,6 +139,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof JewelleryImport
       parentRoute: typeof rootRoute
     }
+    '/category/$name': {
+      id: '/category/$name'
+      path: '/category/$name'
+      fullPath: '/category/$name'
+      preLoaderRoute: typeof CategoryNameImport
+      parentRoute: typeof rootRoute
+    }
     '/collection/$name': {
       id: '/collection/$name'
       path: '/collection/$name'
@@ -190,6 +203,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/deferred': typeof DeferredRoute
   '/jewellery': typeof JewelleryRoute
+  '/category/$name': typeof CategoryNameRoute
   '/collection/$name': typeof CollectionNameRouteWithChildren
   '/collection/$name/about': typeof CollectionNameAboutRoute
   '/collection/$name/': typeof CollectionNameIndexRoute
@@ -204,6 +218,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/deferred': typeof DeferredRoute
   '/jewellery': typeof JewelleryRoute
+  '/category/$name': typeof CategoryNameRoute
   '/collection/$name/about': typeof CollectionNameAboutRoute
   '/collection/$name': typeof CollectionNameIndexRoute
   '/collection/$name/product/$id': typeof CollectionNameProductIdRoute
@@ -218,6 +233,7 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/deferred': typeof DeferredRoute
   '/jewellery': typeof JewelleryRoute
+  '/category/$name': typeof CategoryNameRoute
   '/collection/$name': typeof CollectionNameRouteWithChildren
   '/collection/$name/about': typeof CollectionNameAboutRoute
   '/collection/$name/': typeof CollectionNameIndexRoute
@@ -234,6 +250,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/deferred'
     | '/jewellery'
+    | '/category/$name'
     | '/collection/$name'
     | '/collection/$name/about'
     | '/collection/$name/'
@@ -247,6 +264,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/deferred'
     | '/jewellery'
+    | '/category/$name'
     | '/collection/$name/about'
     | '/collection/$name'
     | '/collection/$name/product/$id'
@@ -259,6 +277,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/deferred'
     | '/jewellery'
+    | '/category/$name'
     | '/collection/$name'
     | '/collection/$name/about'
     | '/collection/$name/'
@@ -274,6 +293,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   DeferredRoute: typeof DeferredRoute
   JewelleryRoute: typeof JewelleryRoute
+  CategoryNameRoute: typeof CategoryNameRoute
   CollectionNameRoute: typeof CollectionNameRouteWithChildren
 }
 
@@ -285,6 +305,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   DeferredRoute: DeferredRoute,
   JewelleryRoute: JewelleryRoute,
+  CategoryNameRoute: CategoryNameRoute,
   CollectionNameRoute: CollectionNameRouteWithChildren,
 }
 
@@ -307,6 +328,7 @@ export const routeTree = rootRoute
         "/contact",
         "/deferred",
         "/jewellery",
+        "/category/$name",
         "/collection/$name"
       ]
     },
@@ -330,6 +352,9 @@ export const routeTree = rootRoute
     },
     "/jewellery": {
       "filePath": "jewellery.tsx"
+    },
+    "/category/$name": {
+      "filePath": "category/$name.tsx"
     },
     "/collection/$name": {
       "filePath": "collection/$name.tsx",

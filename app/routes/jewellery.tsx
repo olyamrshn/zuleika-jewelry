@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router"
 import { Link } from "@tanstack/react-router"
 
+type CategoryName = "earrings" | "necklaces" | "bracelets" | "rings"
+
 export const Route = createFileRoute("/jewellery")({
   component: () => (
     <div className="flex flex-col md:flex-row md:gap-20 px-8">
@@ -54,35 +56,25 @@ export const Route = createFileRoute("/jewellery")({
             Categories
           </h3>
           <ul className="space-y-4 md:space-y-6 text-neutral-600 font-normal tracking-wider text-sm">
+            {["Earrings", "Necklaces", "Bracelets", "Rings"].map((category) => (
+              <li key={category}>
+                <Link
+                  to="/category/$name"
+                  params={{ name: category.toLowerCase() as CategoryName }}
+                  className="group"
+                >
+                  <span className="relative inline-block">
+                    {category}
+                    <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
+                  </span>
+                </Link>
+              </li>
+            ))}
             <li className="group hover:cursor-pointer">
-              <span className="relative inline-block">
-                Earrings
-                <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
-              </span>
-            </li>
-            <li className="group hover:cursor-pointer">
-              <span className="relative inline-block">
-                Necklaces
-                <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
-              </span>
-            </li>
-            <li className="group hover:cursor-pointer">
-              <span className="relative inline-block">
-                Bracelets
-                <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
-              </span>
-            </li>
-            <li className="group hover:cursor-pointer">
-              <span className="relative inline-block">
-                Rings
-                <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
-              </span>
-            </li>
-            <li className="group hover:cursor-pointer">
-              <span className="relative inline-block">
+              <Link to="/jewellery" className="relative inline-block">
                 See All
                 <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
-              </span>
+              </Link>
             </li>
           </ul>
         </div>

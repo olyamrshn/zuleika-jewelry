@@ -22,6 +22,7 @@ export interface Product {
     careAdvice: string
   }
   collection: CollectionName
+  category: "Earrings" | "Necklaces" | "Bracelets" | "Rings"
 }
 
 export const products: Record<CollectionName, Product[]> = {
@@ -53,6 +54,7 @@ export const products: Record<CollectionName, Product[]> = {
           "We recommend storing your jewelry in a cool, dry place away from direct sunlight and heat sources. Avoid contact with harsh chemicals and perfumes.",
       },
       collection: "eden",
+      category: "Necklaces",
     },
     {
       id: "eden-stella-ring",
@@ -82,6 +84,7 @@ export const products: Record<CollectionName, Product[]> = {
           "We recommend storing your jewelry in a cool, dry place away from direct sunlight and heat sources. Avoid contact with harsh chemicals and perfumes.",
       },
       collection: "eden",
+      category: "Rings",
     },
     {
       id: "eden-flora-necklace-2",
@@ -110,6 +113,7 @@ export const products: Record<CollectionName, Product[]> = {
           "We recommend storing your jewelry in a cool, dry place away from direct sunlight and heat sources. Avoid contact with harsh chemicals and perfumes.",
       },
       collection: "eden",
+      category: "Necklaces",
     },
     {
       id: "eden-stella-ring-2",
@@ -139,6 +143,7 @@ export const products: Record<CollectionName, Product[]> = {
           "We recommend storing your jewelry in a cool, dry place away from direct sunlight and heat sources. Avoid contact with harsh chemicals and perfumes.",
       },
       collection: "eden",
+      category: "Rings",
     },
     {
       id: "eden-flora-necklace-3",
@@ -167,6 +172,7 @@ export const products: Record<CollectionName, Product[]> = {
           "We recommend storing your jewelry in a cool, dry place away from direct sunlight and heat sources. Avoid contact with harsh chemicals and perfumes.",
       },
       collection: "eden",
+      category: "Necklaces",
     },
     {
       id: "eden-stella-ring-3",
@@ -196,6 +202,7 @@ export const products: Record<CollectionName, Product[]> = {
           "We recommend storing your jewelry in a cool, dry place away from direct sunlight and heat sources. Avoid contact with harsh chemicals and perfumes.",
       },
       collection: "eden",
+      category: "Rings",
     },
     {
       id: "eden-flora-necklace-4",
@@ -224,6 +231,7 @@ export const products: Record<CollectionName, Product[]> = {
           "We recommend storing your jewelry in a cool, dry place away from direct sunlight and heat sources. Avoid contact with harsh chemicals and perfumes.",
       },
       collection: "eden",
+      category: "Necklaces",
     },
     {
       id: "eden-stella-ring-4",
@@ -253,6 +261,7 @@ export const products: Record<CollectionName, Product[]> = {
           "We recommend storing your jewelry in a cool, dry place away from direct sunlight and heat sources. Avoid contact with harsh chemicals and perfumes.",
       },
       collection: "eden",
+      category: "Rings",
     },
   ],
   niloufer: [
@@ -285,6 +294,7 @@ export const products: Record<CollectionName, Product[]> = {
           "We recommend storing your jewelry in a cool, dry place away from direct sunlight and heat sources. Avoid contact with harsh chemicals and perfumes.",
       },
       collection: "niloufer",
+      category: "Necklaces",
     },
     {
       id: "niloufer-stella-earrings",
@@ -314,6 +324,7 @@ export const products: Record<CollectionName, Product[]> = {
           "We recommend storing your jewelry in a cool, dry place away from direct sunlight and heat sources. Avoid contact with harsh chemicals and perfumes.",
       },
       collection: "niloufer",
+      category: "Earrings",
     },
   ],
   "poem-bangles": [
@@ -345,6 +356,7 @@ export const products: Record<CollectionName, Product[]> = {
           "We recommend storing your jewelry in a cool, dry place away from direct sunlight and heat sources. Avoid contact with harsh chemicals and perfumes.",
       },
       collection: "poem-bangles",
+      category: "Bracelets",
     },
     {
       id: "poem-bangles-2",
@@ -374,6 +386,7 @@ export const products: Record<CollectionName, Product[]> = {
           "We recommend storing your jewelry in a cool, dry place away from direct sunlight and heat sources. Avoid contact with harsh chemicals and perfumes.",
       },
       collection: "poem-bangles",
+      category: "Bracelets",
     },
   ],
 }

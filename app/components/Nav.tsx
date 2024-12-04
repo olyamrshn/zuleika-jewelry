@@ -15,6 +15,7 @@ export default function Nav() {
   const isJewelleryRoute = location.pathname === "/jewellery"
   const isCollectionRoute = location.pathname.startsWith("/collection/")
   const isAboutRoute = location.pathname === "/about"
+  const isCategoryRoute = location.pathname.startsWith("/category/")
   const { cartCount } = useCart()
   const [showFullNav, setShowFullNav] = useState(false)
 
@@ -93,7 +94,7 @@ export default function Nav() {
 
   return (
     <div className="fixed top-0 left-0 right-0 bg-white z-50 zuleika-text-color">
-      {isJewelleryRoute || isCollectionRoute ? (
+      {isJewelleryRoute || isCollectionRoute || isCategoryRoute ? (
         <div className="flex flex-col p-4 sm:flex-row justify-between items-center font-kepler">
           <div className="w-[120px] mr-auto pb-2 md:pb-0 md:mr-0 flex items-center justify-start sm:absolute sm:left-4 sm:top-4">
             <>
