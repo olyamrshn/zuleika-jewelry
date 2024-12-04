@@ -28,14 +28,12 @@ export interface Product {
 export const products: Record<CollectionName, Product[]> = {
   eden: [
     {
-      id: "eden-flora-necklace",
-      name: "Eden Flora Necklace 40cm in yellow gold and pearls",
+      id: "eden-necklace",
+      name: "Eden Flora Necklace",
       price: "$1.000",
       image: "https://images.omrshn.dev/neck.jpeg",
       image2: "https://images.omrshn.dev/collection.jpeg",
-      image3: "https://images.omrshn.dev/neck.jpeg",
-      description:
-        "Take a classic that has stood the test of time, then pull it and twist it. Make people look twice. Smooth pearls are interspersed with handmade granulated gold cones, strikingly framing the face.",
+      description: "Elegant necklace from Eden collection...",
       details: {
         size: "One Size",
         materials: "Yellow gold 18k, 8mm white pearls",
@@ -57,15 +55,12 @@ export const products: Record<CollectionName, Product[]> = {
       category: "Necklaces",
     },
     {
-      id: "eden-stella-ring",
+      id: "eden-ring",
       name: "Eden Stella Ring",
-      price: "$1.000",
-      image: "https://images.omrshn.dev/ears.jpg",
+      price: "$800",
+      image: "https://images.omrshn.dev/ring.jpg",
       image2: "https://images.omrshn.dev/collection.jpeg",
-      image3: "https://images.omrshn.dev/ears.jpg",
-      image4: "https://images.omrshn.dev/collection.jpeg",
-      description:
-        "A stunning statement ring featuring intricate granulation work in 18k yellow gold, inspired by the natural patterns found in Eden's garden.",
+      description: "Beautiful ring from Eden collection...",
       details: {
         size: "One Size",
         materials: "Yellow gold 18k",
@@ -87,14 +82,12 @@ export const products: Record<CollectionName, Product[]> = {
       category: "Rings",
     },
     {
-      id: "eden-flora-necklace-2",
-      name: "Eden Flora Necklace 40cm in yellow gold and pearls",
-      price: "$1.000",
-      image: "https://images.omrshn.dev/neck.jpeg",
+      id: "eden-bracelet",
+      name: "Eden Grace Bracelet",
+      price: "$900",
+      image: "https://images.omrshn.dev/ears.jpg",
       image2: "https://images.omrshn.dev/collection.jpeg",
-      image3: "https://images.omrshn.dev/neck.jpeg",
-      description:
-        "Take a classic that has stood the test of time, then pull it and twist it. Make people look twice. Smooth pearls are interspersed with handmade granulated gold cones, strikingly framing the face.",
+      description: "Stunning bracelet from Eden collection...",
       details: {
         size: "One Size",
         materials: "Yellow gold 18k, 8mm white pearls",
@@ -113,47 +106,15 @@ export const products: Record<CollectionName, Product[]> = {
           "We recommend storing your jewelry in a cool, dry place away from direct sunlight and heat sources. Avoid contact with harsh chemicals and perfumes.",
       },
       collection: "eden",
-      category: "Necklaces",
+      category: "Bracelets",
     },
     {
-      id: "eden-stella-ring-2",
-      name: "Eden Stella Ring",
-      price: "$1.000",
-      image: "https://images.omrshn.dev/ears.jpg",
-      image2: "https://images.omrshn.dev/collection.jpeg",
-      image3: "https://images.omrshn.dev/ears.jpg",
-      image4: "https://images.omrshn.dev/collection.jpeg",
-      description:
-        "A stunning statement ring featuring intricate granulation work in 18k yellow gold, inspired by the natural patterns found in Eden's garden.",
-      details: {
-        size: "One Size",
-        materials: "Yellow gold 18k",
-        weight: "8g gold",
-        dimensions: "Band width: 0.8cm",
-        fullDescription:
-          "An elegant ring showcasing masterful granulation technique, with delicate gold spheres arranged in a mesmerizing pattern. The ring's design draws inspiration from the geometric patterns found in nature.",
-        aboutCollection:
-          "The Eden collection represents nature's perfect harmony...",
-        savoirFaire:
-          "For this ring, we use a technique called granulation, where we create a pattern by melting gold and then cooling it to create a sphere. This is a very delicate process that requires a lot of skill and patience.",
-        needAssistance: "",
-        shipping:
-          "We offer free shipping on all orders over $500. For orders under $500, shipping is $50.",
-        careAdvice:
-          "We recommend storing your jewelry in a cool, dry place away from direct sunlight and heat sources. Avoid contact with harsh chemicals and perfumes.",
-      },
-      collection: "eden",
-      category: "Rings",
-    },
-    {
-      id: "eden-flora-necklace-3",
-      name: "Eden Flora Necklace 40cm in yellow gold and pearls",
-      price: "$1.000",
-      image: "https://images.omrshn.dev/neck.jpeg",
-      image2: "https://images.omrshn.dev/collection.jpeg",
-      image3: "https://images.omrshn.dev/neck.jpeg",
-      description:
-        "Take a classic that has stood the test of time, then pull it and twist it. Make people look twice. Smooth pearls are interspersed with handmade granulated gold cones, strikingly framing the face.",
+      id: "eden-earrings",
+      name: "Eden Pearl Earrings",
+      price: "$700",
+      image: "https://images.omrshn.dev/collection.jpeg",
+      image2: "https://images.omrshn.dev/neck.jpeg",
+      description: "Classic earrings from Eden collection...",
       details: {
         size: "One Size",
         materials: "Yellow gold 18k, 8mm white pearls",
@@ -172,110 +133,17 @@ export const products: Record<CollectionName, Product[]> = {
           "We recommend storing your jewelry in a cool, dry place away from direct sunlight and heat sources. Avoid contact with harsh chemicals and perfumes.",
       },
       collection: "eden",
-      category: "Necklaces",
-    },
-    {
-      id: "eden-stella-ring-3",
-      name: "Eden Stella Ring",
-      price: "$1.000",
-      image: "https://images.omrshn.dev/ears.jpg",
-      image2: "https://images.omrshn.dev/collection.jpeg",
-      image3: "https://images.omrshn.dev/ears.jpg",
-      image4: "https://images.omrshn.dev/collection.jpeg",
-      description:
-        "A stunning statement ring featuring intricate granulation work in 18k yellow gold, inspired by the natural patterns found in Eden's garden.",
-      details: {
-        size: "One Size",
-        materials: "Yellow gold 18k",
-        weight: "8g gold",
-        dimensions: "Band width: 0.8cm",
-        fullDescription:
-          "An elegant ring showcasing masterful granulation technique, with delicate gold spheres arranged in a mesmerizing pattern. The ring's design draws inspiration from the geometric patterns found in nature.",
-        aboutCollection:
-          "The Eden collection represents nature's perfect harmony...",
-        savoirFaire:
-          "For this ring, we use a technique called granulation, where we create a pattern by melting gold and then cooling it to create a sphere. This is a very delicate process that requires a lot of skill and patience.",
-        needAssistance: "",
-        shipping:
-          "We offer free shipping on all orders over $500. For orders under $500, shipping is $50.",
-        careAdvice:
-          "We recommend storing your jewelry in a cool, dry place away from direct sunlight and heat sources. Avoid contact with harsh chemicals and perfumes.",
-      },
-      collection: "eden",
-      category: "Rings",
-    },
-    {
-      id: "eden-flora-necklace-4",
-      name: "Eden Flora Necklace 40cm in yellow gold and pearls",
-      price: "$1.000",
-      image: "https://images.omrshn.dev/neck.jpeg",
-      image2: "https://images.omrshn.dev/collection.jpeg",
-      image3: "https://images.omrshn.dev/neck.jpeg",
-      description:
-        "Take a classic that has stood the test of time, then pull it and twist it. Make people look twice. Smooth pearls are interspersed with handmade granulated gold cones, strikingly framing the face.",
-      details: {
-        size: "One Size",
-        materials: "Yellow gold 18k, 8mm white pearls",
-        weight: "12g gold",
-        dimensions: "40cm long",
-        fullDescription:
-          "A 40cm string of 8mm round pearls, interspersed with 9 granulated gold cone caps that fit snugly around the pearls. The lock detail has been considered with care, a granulated button clasp.",
-        aboutCollection:
-          "The Eden collection represents nature's perfect harmony",
-        savoirFaire:
-          "We use a technique called granulation, where we create a pattern by melting gold and then cooling it to create a sphere. This is a very delicate process that requires a lot of skill and patience.",
-        needAssistance: "",
-        shipping:
-          "We offer free shipping on all orders over $500. For orders under $500, shipping is $50.",
-        careAdvice:
-          "We recommend storing your jewelry in a cool, dry place away from direct sunlight and heat sources. Avoid contact with harsh chemicals and perfumes.",
-      },
-      collection: "eden",
-      category: "Necklaces",
-    },
-    {
-      id: "eden-stella-ring-4",
-      name: "Eden Stella Ring",
-      price: "$1.000",
-      image: "https://images.omrshn.dev/ears.jpg",
-      image2: "https://images.omrshn.dev/collection.jpeg",
-      image3: "https://images.omrshn.dev/ears.jpg",
-      image4: "https://images.omrshn.dev/collection.jpeg",
-      description:
-        "A stunning statement ring featuring intricate granulation work in 18k yellow gold, inspired by the natural patterns found in Eden's garden.",
-      details: {
-        size: "One Size",
-        materials: "Yellow gold 18k",
-        weight: "8g gold",
-        dimensions: "Band width: 0.8cm",
-        fullDescription:
-          "An elegant ring showcasing masterful granulation technique, with delicate gold spheres arranged in a mesmerizing pattern. The ring's design draws inspiration from the geometric patterns found in nature.",
-        aboutCollection:
-          "The Eden collection represents nature's perfect harmony...",
-        savoirFaire:
-          "For this ring, we use a technique called granulation, where we create a pattern by melting gold and then cooling it to create a sphere. This is a very delicate process that requires a lot of skill and patience.",
-        needAssistance: "",
-        shipping:
-          "We offer free shipping on all orders over $500. For orders under $500, shipping is $50.",
-        careAdvice:
-          "We recommend storing your jewelry in a cool, dry place away from direct sunlight and heat sources. Avoid contact with harsh chemicals and perfumes.",
-      },
-      collection: "eden",
-      category: "Rings",
+      category: "Earrings",
     },
   ],
   niloufer: [
     {
-      id: "niloufer-luna-necklace",
-      name: "Niloufer Luna Necklace 40cm in yellow gold and pearls",
-      price: "$2.000",
-
-      image: "https://images.omrshn.dev/ears.jpg",
-      image2: "https://images.omrshn.dev/collection.jpeg",
-      image3: "https://images.omrshn.dev/ears.jpg",
-      image4: "https://images.omrshn.dev/collection.jpeg",
-      description:
-        "Take a classic that has stood the test of time, then pull it and twist it. Make people look twice. Smooth pearls are interspersed with handmade granulated gold cones, strikingly framing the face.",
+      id: "niloufer-necklace",
+      name: "Niloufer Luna Necklace",
+      price: "$1.200",
+      image: "https://images.omrshn.dev/collection.jpeg",
+      image2: "https://images.omrshn.dev/neck.jpeg",
+      description: "Elegant necklace from Niloufer collection...",
       details: {
         size: "One Size",
         materials: "Yellow gold 18k, 8mm white pearls",
@@ -297,24 +165,75 @@ export const products: Record<CollectionName, Product[]> = {
       category: "Necklaces",
     },
     {
-      id: "niloufer-stella-earrings",
-      name: "Niloufer Stella Earrings",
-      price: "$2.000",
-      image: "https://images.omrshn.dev/neck.jpeg",
-      image2: "https://images.omrshn.dev/collection.jpeg",
-      image3: "https://images.omrshn.dev/ears.jpg",
-      image4: "https://images.omrshn.dev/collection.jpeg",
-      description:
-        "Elegant drop earrings featuring Persian-inspired motifs, handcrafted in 18k yellow gold with delicate granulation work.",
+      id: "niloufer-ring",
+      name: "Niloufer Star Ring",
+      price: "$900",
+      image: "https://images.omrshn.dev/ring.jpg",
+      image2: "https://images.omrshn.dev/ears.jpg",
+      description: "Beautiful ring from Niloufer collection...",
       details: {
         size: "One Size",
         materials: "Yellow gold 18k",
-        weight: "6g gold per earring",
-        dimensions: "Length: 3.5cm",
+        weight: "8g gold",
+        dimensions: "Band width: 0.8cm",
         fullDescription:
-          "These statement earrings showcase the finest granulation technique, with each gold sphere carefully placed to create a mesmerizing pattern inspired by Persian gardens. The earrings feature secure butterfly backs for comfortable wear.",
+          "An elegant ring showcasing masterful granulation technique, with delicate gold spheres arranged in a mesmerizing pattern. The ring's design draws inspiration from the geometric patterns found in nature.",
         aboutCollection:
-          "The Niloufer collection represents nature's perfect harmony...",
+          "The Eden collection represents nature's perfect harmony...",
+        savoirFaire:
+          "For this ring, we use a technique called granulation, where we create a pattern by melting gold and then cooling it to create a sphere. This is a very delicate process that requires a lot of skill and patience.",
+        needAssistance: "",
+        shipping:
+          "We offer free shipping on all orders over $500. For orders under $500, shipping is $50.",
+        careAdvice:
+          "We recommend storing your jewelry in a cool, dry place away from direct sunlight and heat sources. Avoid contact with harsh chemicals and perfumes.",
+      },
+      collection: "niloufer",
+      category: "Rings",
+    },
+    {
+      id: "niloufer-bracelet",
+      name: "Niloufer Moon Bracelet",
+      price: "$1.100",
+      image: "https://images.omrshn.dev/neck.jpeg",
+      image2: "https://images.omrshn.dev/collection.jpeg",
+      description: "Stunning bracelet from Niloufer collection...",
+      details: {
+        size: "One Size",
+        materials: "Yellow gold 18k, 8mm white pearls",
+        weight: "12g gold",
+        dimensions: "40cm long",
+        fullDescription:
+          "A 40cm string of 8mm round pearls, interspersed with 9 granulated gold cone caps that fit snugly around the pearls. The lock detail has been considered with care, a granulated button clasp.",
+        aboutCollection:
+          "The Eden collection represents nature's perfect harmony",
+        savoirFaire:
+          "We use a technique called granulation, where we create a pattern by melting gold and then cooling it to create a sphere. This is a very delicate process that requires a lot of skill and patience.",
+        needAssistance: "",
+        shipping:
+          "We offer free shipping on all orders over $500. For orders under $500, shipping is $50.",
+        careAdvice:
+          "We recommend storing your jewelry in a cool, dry place away from direct sunlight and heat sources. Avoid contact with harsh chemicals and perfumes.",
+      },
+      collection: "niloufer",
+      category: "Bracelets",
+    },
+    {
+      id: "niloufer-earrings",
+      name: "Niloufer Sun Earrings",
+      price: "$800",
+      image: "https://images.omrshn.dev/ears.jpg",
+      image2: "https://images.omrshn.dev/ring.jpg",
+      description: "Classic earrings from Niloufer collection...",
+      details: {
+        size: "One Size",
+        materials: "Yellow gold 18k, 8mm white pearls",
+        weight: "12g gold",
+        dimensions: "40cm long",
+        fullDescription:
+          "A 40cm string of 8mm round pearls, interspersed with 9 granulated gold cone caps that fit snugly around the pearls. The lock detail has been considered with care, a granulated button clasp.",
+        aboutCollection:
+          "The Eden collection represents nature's perfect harmony",
         savoirFaire:
           "We use a technique called granulation, where we create a pattern by melting gold and then cooling it to create a sphere. This is a very delicate process that requires a lot of skill and patience.",
         needAssistance: "",
@@ -329,15 +248,66 @@ export const products: Record<CollectionName, Product[]> = {
   ],
   "poem-bangles": [
     {
-      id: "poem-bangles-1",
-      name: "Poem Bangle Classic in yellow gold and pearls",
-      price: "$3.000",
+      id: "poem-necklace",
+      name: "Poem Verse Necklace",
+      price: "$1.300",
       image: "https://images.omrshn.dev/ring.jpg",
       image2: "https://images.omrshn.dev/collection.jpeg",
-      image3: "https://images.omrshn.dev/ring.jpg",
-      image4: "https://images.omrshn.dev/collection.jpeg",
-      description:
-        "A timeless bangle design featuring flowing lines and intricate granulation work, creating poetry in motion on your wrist.",
+      description: "Elegant necklace from Poem collection...",
+      details: {
+        size: "One Size",
+        materials: "Yellow gold 18k",
+        weight: "15g gold",
+        dimensions: "Diameter: 6.5cm",
+        fullDescription:
+          "This signature bangle from our Poem collection features a continuous flow of granulated gold spheres, creating a rhythmic pattern that catches and plays with light. The bangle opens with a hidden clasp mechanism.",
+        aboutCollection:
+          "The Poem collection represents nature's perfect harmony...",
+        savoirFaire:
+          "We use a technique called granulation, where we create a pattern by melting gold and then cooling it to create a sphere. This is a very delicate process that requires a lot of skill and patience.",
+        needAssistance: "",
+        shipping:
+          "We offer free shipping on all orders over $500. For orders under $500, shipping is $50.",
+        careAdvice:
+          "We recommend storing your jewelry in a cool, dry place away from direct sunlight and heat sources. Avoid contact with harsh chemicals and perfumes.",
+      },
+      collection: "poem-bangles",
+      category: "Necklaces",
+    },
+    {
+      id: "poem-ring",
+      name: "Poem Rhyme Ring",
+      price: "$950",
+      image: "https://images.omrshn.dev/neck.jpeg",
+      image2: "https://images.omrshn.dev/ears.jpg",
+      description: "Beautiful ring from Poem collection...",
+      details: {
+        size: "One Size",
+        materials: "Yellow gold 18k",
+        weight: "18g gold",
+        dimensions: "Diameter: 6.5cm",
+        fullDescription:
+          "The Verse bangle transforms written poetry into wearable art, with waves of granulated gold creating a visual rhythm. Each sphere is carefully placed to represent the cadence of poetic meter.",
+        aboutCollection:
+          "The Poem collection represents nature's perfect harmony...",
+        savoirFaire:
+          "We use a technique called granulation, where we create a pattern by melting gold and then cooling it to create a sphere. This is a very delicate process that requires a lot of skill and patience.",
+        needAssistance: "",
+        shipping:
+          "We offer free shipping on all orders over $500. For orders under $500, shipping is $50.",
+        careAdvice:
+          "We recommend storing your jewelry in a cool, dry place away from direct sunlight and heat sources. Avoid contact with harsh chemicals and perfumes.",
+      },
+      collection: "poem-bangles",
+      category: "Rings",
+    },
+    {
+      id: "poem-bracelet",
+      name: "Poem Stanza Bracelet",
+      price: "$1.200",
+      image: "https://images.omrshn.dev/collection.jpeg",
+      image2: "https://images.omrshn.dev/ring.jpg",
+      description: "Stunning bracelet from Poem collection...",
       details: {
         size: "One Size",
         materials: "Yellow gold 18k",
@@ -359,22 +329,19 @@ export const products: Record<CollectionName, Product[]> = {
       category: "Bracelets",
     },
     {
-      id: "poem-bangles-2",
-      name: "Poem Bangle Verse",
-      price: "$3.000",
-      image: "https://images.omrshn.dev/neck.jpeg",
-      image2: "https://images.omrshn.dev/collection.jpeg",
-      image3: "https://images.omrshn.dev/ring.jpg",
-      image4: "https://images.omrshn.dev/collection.jpeg",
-      description:
-        "An artistic interpretation of written verse translated into precious metal, featuring undulating forms and delicate granulation.",
+      id: "poem-earrings",
+      name: "Poem Sonnet Earrings",
+      price: "$850",
+      image: "https://images.omrshn.dev/ears.jpg",
+      image2: "https://images.omrshn.dev/neck.jpeg",
+      description: "Classic earrings from Poem collection...",
       details: {
         size: "One Size",
-        materials: "Yellow gold 18k",
-        weight: "18g gold",
-        dimensions: "Diameter: 6.5cm",
+        materials: "Yellow gold 18k, 8mm white pearls",
+        weight: "6g gold per earring",
+        dimensions: "Length: 3.5cm",
         fullDescription:
-          "The Verse bangle transforms written poetry into wearable art, with waves of granulated gold creating a visual rhythm. Each sphere is carefully placed to represent the cadence of poetic meter.",
+          "These statement earrings showcase the finest granulation technique, with each gold sphere carefully placed to create a mesmerizing pattern inspired by Persian gardens. The earrings feature secure butterfly backs for comfortable wear.",
         aboutCollection:
           "The Poem collection represents nature's perfect harmony...",
         savoirFaire:
@@ -386,7 +353,7 @@ export const products: Record<CollectionName, Product[]> = {
           "We recommend storing your jewelry in a cool, dry place away from direct sunlight and heat sources. Avoid contact with harsh chemicals and perfumes.",
       },
       collection: "poem-bangles",
-      category: "Bracelets",
+      category: "Earrings",
     },
   ],
 }
