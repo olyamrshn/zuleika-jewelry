@@ -31,7 +31,7 @@ export default function Nav() {
 
   if (isAboutRoute) {
     return (
-      <nav className="fixed top-0 left-0 right-0 bg-white z-50 flex flex-col lg:flex-row items-center p-4 px-5 zuleika-text-color font-kepler">
+      <nav className="fixed top-0 kepler-title left-0 right-0 bg-white z-50 flex flex-col lg:flex-row items-center p-4 px-5 zuleika-text-color font-kepler">
         <div className="flex justify-between lg:justify-start w-full lg:mb-4 order-1 lg:order-none">
           <div className="flex space-x-4">
             <a href="#">FR</a>
@@ -43,7 +43,7 @@ export default function Nav() {
           </div>
         </div>
 
-        <div className="text-center flex flex-col w-full lg:w-auto font-keplerCondensed order-0 lg:order-none mb-4 lg:mb-0">
+        <div className="text-center flex flex-col w-full lg:w-auto order-0 lg:order-none mb-4 lg:mb-0">
           <Link
             to="/"
             className={`${
@@ -63,13 +63,6 @@ export default function Nav() {
             <Link to="/bijoux-despace" className="group whitespace-nowrap">
               <span className="relative inline-block">
                 BIJOUX&nbsp;D'ESPACE
-                <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
-              </span>
-            </Link>
-
-            <Link to="/about" className="group whitespace-nowrap">
-              <span className="relative inline-block">
-                ABOUT
                 <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
               </span>
             </Link>
