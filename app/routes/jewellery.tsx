@@ -5,11 +5,11 @@ export const Route = createFileRoute("/jewellery")({
   component: () => (
     <div className="flex flex-col md:flex-row md:gap-20 px-8">
       <div className="flex flex-col">
-        <div className="py-2 md:py-10">
-          <h3 className="text-lg md:text-xl mb-4 md:mb-8 font-light tracking-wider">
+        <div className="pb-[4em]">
+          <h3 className="text-lg mb-6 font-semibold tracking-wider">
             Collections
           </h3>
-          <ul className="space-y-2 md:space-y-4 text-neutral-600 font-light tracking-wider text-sm md:text-base">
+          <ul className="space-y-4 md:space-y-6 text-neutral-600 font-normal tracking-wider text-sm">
             <li>
               <Link
                 to={"/collection/$name"}
@@ -49,11 +49,11 @@ export const Route = createFileRoute("/jewellery")({
           </ul>
         </div>
 
-        <div className="pb-4 md:pb-8 md:py-8">
-          <h3 className="text-lg md:text-xl mb-4 md:mb-8 font-light tracking-wider">
+        <div className="pb-8 md:pb-16">
+          <h3 className="text-lg mb-6 font-semibold tracking-wider">
             Categories
           </h3>
-          <ul className="space-y-2 md:space-y-4 text-neutral-600 font-light tracking-wider text-sm md:text-base">
+          <ul className="space-y-4 md:space-y-6 text-neutral-600 font-normal tracking-wider text-sm">
             <li className="group hover:cursor-pointer">
               <span className="relative inline-block">
                 Earrings
