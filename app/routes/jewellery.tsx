@@ -71,7 +71,7 @@ export const Route = createFileRoute("/jewellery")({
               </li>
             ))}
             <li className="group hover:cursor-pointer">
-              <Link to="/jewellery" className="relative inline-block">
+              <Link to="/category/all" className="relative inline-block">
                 See All
                 <span className="absolute left-0 -bottom-0.5 w-full h-px bg-current transform scale-x-0 group-hover:scale-x-100 transition-transform"></span>
               </Link>
