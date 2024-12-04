@@ -10,9 +10,9 @@ export const Route = createFileRoute("/category/all")({
     const allProducts = Object.values(products).flat()
 
     return (
-      <div className="text-center">
+      <div className="text-center px-4 mx-auto gap-4">
         <h1 className="text-lg font-semibold mb-8">ALL PRODUCTS</h1>
-        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-1">
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-4">
           {allProducts.map((product) => (
             <div key={product.name} className="p-2">
               <Link

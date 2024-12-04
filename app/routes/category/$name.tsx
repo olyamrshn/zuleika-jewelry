@@ -25,7 +25,7 @@ export const Route = createFileRoute("/category/$name")({
     )
 
     return (
-      <div className="text-center">
+      <div className="text-center px-4 mx-auto gap-4">
         <h1 className="text-lg font-semibold mb-8">{name.toUpperCase()}</h1>
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-1">
           {categoryProducts.map((product) => (
@@ -57,7 +57,7 @@ export const Route = createFileRoute("/category/$name")({
                     />
                   )}
                 </div>
-                <div className="text-center md:text-left w-[85%] mx-auto">
+                <div className="text-center md:text-left w-[60%] mx-auto md:mx-0 md:pl-2">
                   <p className="text-[13px]">{product.name}</p>
                   <span className="text-xs opacity-55">{product.price}</span>
                 </div>
