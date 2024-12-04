@@ -58,13 +58,14 @@ function ProductComponent() {
     product.image,
     ...(product.image2 ? [product.image2] : []),
     ...(product.image3 ? [product.image3] : []),
+    ...(product.image4 ? [product.image4] : []),
   ]
 
   return (
     <div className="flex flex-col lg:flex-row px-4 w-[95%] mx-auto">
       <div className="w-full lg:w-1/2 lg:mr-5 relative">
         <div
-          className="h-[400px] lg:h-[600px] overflow-x-auto lg:overflow-x-hidden lg:overflow-y-auto snap-x lg:snap-y snap-mandatory scrollbar-hide"
+          className="h-[400px] lg:h-[600px] overflow-x-auto lg:overflow-x-hidden lg:overflow-y-auto snap-x lg:snap-y snap-mandatory scroll-smooth scrollbar-hide"
           onWheel={handleWheel}
           onScroll={(e) => {
             const element = e.currentTarget
@@ -80,12 +81,12 @@ function ProductComponent() {
             {images.map((image, index) => (
               <div
                 key={`${image}-${index}`}
-                className="snap-start w-screen lg:w-full"
+                className="snap-start w-[100vw] lg:w-full"
               >
                 <img
                   src={image}
                   alt={`${product.name}${index > 0 ? ` - view ${index}` : ""}`}
-                  className="w-screen lg:w-full h-[400px] lg:h-[600px] object-cover"
+                  className="w-[90%] lg:w-full h-[400px] lg:h-[600px] object-cover"
                 />
               </div>
             ))}
